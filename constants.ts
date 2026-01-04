@@ -83,7 +83,8 @@ export const portfolioData: PortfolioData = {
       "id": 5,
       "title": "Comiteplus",
       "images": [
-        
+          "/assets/image/comiteplus/comite1.png"
+
       ],
       "description": "Intégration du site web dans une application mobile et réalisation des tests unitaires.",
       "technologies": ["UI", "HTML", "CSS", "PHP", "JavaScript"],
