@@ -1,0 +1,93 @@
+
+import { PortfolioData } from './types';
+
+export const portfolioData: PortfolioData = {
+  "personal": {
+    "name": "Abderrazak Seghir",
+    "title": "Développeur Full Stack",
+    "status": "Étudiant en Master 2 MIAGE",
+    "objective": "Recherche un poste en CDI pour mettre en valeur mes compétences et apprendre de nouvelles technologies",
+    "description": "Développeur Full Stack avec des compétences en .NET, Blazor, et SQL Server. Actuellement en dernière année de Master 2 MIAGE, je recherche un poste en CDI pour appliquer mes compétences et continuer à apprendre. J'ai une expérience en gestion de projets et d'équipes, et je suis certifié AWS Solutions Architect Associate.",
+    "avatar": "/assets/image/avatar.jpg"
+  },
+  "projects": [
+    {
+      "id": 1,
+      "title": "Comiteplus",
+      "images": [
+        "/assets/image/comiteplus_main.jpg",
+        "/assets/image/comiteplus_mobile.jpg",
+        "/assets/image/comiteplus_details.jpg"
+      ],
+      "description": "Intégration du site web dans une application mobile et réalisation des tests unitaires.",
+      "technologies": ["UI","HTML","CSS","PHP","JavaScript"],
+      "achievements": [
+        "Intégration réussie du site web dans une application mobile",
+        "Réalisation complète des tests unitaires",
+        "Appréhension de l'activité d'un développeur indépendant"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Prigra",
+      "images": [
+        "/assets/image/prigra_dashboard.jpg",
+        "/assets/image/prigra_kanban.jpg"
+      ],
+      "description": "Plateforme web pour la gestion des projets de fin d'étude en Algérie.",
+      "technologies": ["Django", "ReactJS"],
+      "achievements": [
+        "Conception et développement des fonctionnalités principales",
+        "Intégration du front-end avec le back-end",
+        "Utilisation des pratiques de la méthodologie Agile Scrum"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "JARVIS",
+      "images": [
+        "/assets/image/jarvis_home.jpg",
+        "/assets/image/jarvis_ai.jpg"
+      ],
+      "description": "Application mobile de gestion de projets basée sur l'IA.",
+      "technologies": ["Flutter", "NodeJS"],
+      "achievements": [
+        "2ème place lors du Hackathon national de 48 heures GDG Devfest",
+        "Développement d'une application mobile basée sur l'IA"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "school": "Institut des sciences du Digital, Management Cognition",
+      "degrees": [
+        { "degree": "Master Miage", "period": "2024 - 2026", "description": "Systèmes d'information, Business Intelligence, analyse de données, maîtrise d'ouvrage." },
+        { "degree": "Licence Miage", "period": "2023 - 2024", "description": "Informatique et gestion des entreprises." }
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "position": "Développeur Full Stack",
+      "company": "Afludia",
+      "period": "2024 - Présent",
+      "description": "Développement d'applications web en utilisant .NET, Blazor et SQL Server.",
+      "achievements": ["Travail sur plusieurs projets en utilisant .NET et Blazor", "Gestion de bases de données avec SQL Server", "Collaboration en équipe"]
+    },
+    {
+      "position": "Développeur Full Stack - Stage",
+      "company": "Solutions Développement Informatique",
+      "period": "Avril 2024 - Juin 2024",
+      "description": "Développement de la partie front-end et back-end d'une application web.",
+      "achievements": ["Développement complet de l'application web", "Intégration du site web dans une application mobile", "Réalisation des tests unitaires"]
+    }
+  ],
+  "contact": {
+    "email": "abderrazakseghir1@gmail.com",
+    "phone": "+33 7 66 72 99 78",
+    "linkedin": "https://linkedin.com/in/abderrazak-seghir",
+    "github": "https://github.com/abderrazak-seghir",
+    "location": "France"
+  },
+  "skills": [".NET", "C#", "Blazor", "JavaScript", "React", "Flutter", "Python", "Java", "SQL Server", "Git", "AWS", "Agile/Scrum"]
+};
