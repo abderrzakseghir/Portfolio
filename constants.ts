@@ -1,4 +1,3 @@
-
 import { PortfolioData } from './types';
 
 export const portfolioData: PortfolioData = {
@@ -20,7 +19,7 @@ export const portfolioData: PortfolioData = {
         "/assets/image/comiteplus_details.jpg"
       ],
       "description": "Intégration du site web dans une application mobile et réalisation des tests unitaires.",
-      "technologies": ["UI","HTML","CSS","PHP","JavaScript"],
+      "technologies": ["UI", "HTML", "CSS", "PHP", "JavaScript"],
       "achievements": [
         "Intégration réussie du site web dans une application mobile",
         "Réalisation complète des tests unitaires",
@@ -55,20 +54,46 @@ export const portfolioData: PortfolioData = {
         "2ème place lors du Hackathon national de 48 heures GDG Devfest",
         "Développement d'une application mobile basée sur l'IA"
       ]
+    },
+    {
+      "id": 4,
+      "title": "TRD - Paris Sportifs (Microservices)",
+      "images": [
+        "/assets/image/trd_architecture.jpg",
+        "/assets/image/trd_swagger.jpg"
+      ],
+      "description": "Conception et développement d'une architecture distribuée pour une application de paris sportifs (Coupe du Monde 2026).",
+      "technologies": [".NET 8", "Docker", "PostgreSQL", "RabbitMQ", "DDD"],
+      "achievements": [
+        "Architecture en Microservices suivant l'approche Domain-Driven Design (DDD)",
+        "Conteneurisation complète de l'infrastructure backend avec Docker",
+        "Mise en place d'APIs REST performantes et communication asynchrone",
+        "Gestion de la cohérence des données et déploiement CI/CD"
+      ]
     }
   ],
   "education": [
     {
       "school": "Institut des sciences du Digital, Management Cognition",
       "degrees": [
-        { "degree": "Master Miage", "period": "2024 - 2026", "description": "Systèmes d'information, Business Intelligence, analyse de données, maîtrise d'ouvrage." },
+        { "degree": "Master Miage SID", "period": "2024 - 2026", "description": "Systèmes d'information, Business Intelligence, analyse de données, maîtrise d'ouvrage." },
         { "degree": "Licence Miage", "period": "2023 - 2024", "description": "Informatique et gestion des entreprises." }
+      ]
+    },
+    {
+      "school": "École nationale supérieure d'informatique (ESI) - Alger",
+      "degrees": [
+        { 
+          "degree": "Classes Préparatoires & 1ère année Cycle Ingénieur", 
+          "period": "2020 - 2022", 
+          "description": "Formation intensive en Mathématiques, Algorithmique, Recherche Opérationnelle (RO), Électronique et Réseaux." 
+        }
       ]
     }
   ],
   "experience": [
     {
-      "position": "Développeur Full Stack",
+      "position": "Développeur Full Stack - Alternance",
       "company": "Afludia",
       "period": "2024 - Présent",
       "description": "Développement d'applications web en utilisant .NET, Blazor et SQL Server.",
@@ -89,5 +114,22 @@ export const portfolioData: PortfolioData = {
     "github": "https://github.com/abderrazak-seghir",
     "location": "France"
   },
-  "skills": [".NET", "C#", "Blazor", "JavaScript", "React", "Flutter", "Python", "Java", "SQL Server", "Git", "AWS", "Agile/Scrum"]
+  "skills": [
+    ".NET", 
+    "C#", 
+    "Blazor", 
+    "Microservices", 
+    "Docker", 
+    "PostgreSQL", 
+    "RabbitMQ", 
+    "JavaScript", 
+    "React", 
+    "Flutter", 
+    "Python", 
+    "Java", 
+    "SQL Server", 
+    "Git", 
+    "AWS", 
+    "Agile/Scrum"
+  ]
 };
