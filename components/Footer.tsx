@@ -72,7 +72,6 @@ export const Footer: React.FC<FooterProps> = ({ contact }) => {
         </div>
 
         <div className="border-t border-slate-800 mt-16 pt-8 text-center text-slate-500 text-sm">
-          <p>© {new Date().getFullYear()} Abderrazak Seghir. Tous droits réservés.</p>
         </div>
       </div>
     </footer>

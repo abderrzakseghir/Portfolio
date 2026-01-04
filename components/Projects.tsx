@@ -23,7 +23,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
   }, [selectedProjectId]);
 
   return (
-    <section id="projects" className="py-20 bg-slate-50 relative">
+    <section id="projects" className="py-20 bg-slate-200 relative">
       <div className="container mx-auto px-6">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -78,13 +78,13 @@ const ProjectCard: React.FC<{ project: Project; index: number; onClick: () => vo
       onClick={onClick}
       className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-slate-100 cursor-pointer group flex flex-col h-full"
     >
-      <div className="relative h-48 overflow-hidden bg-slate-200">
+      <div className="relative aspect-video overflow-hidden bg-slate-200">
         {!imgError && mainImage ? (
           <img
             src={mainImage}
             alt={project.title}
             onError={() => setImgError(true)}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
           />
         ) : (
            <div className="w-full h-full flex flex-col items-center justify-center text-slate-400 bg-slate-100">
@@ -170,12 +170,11 @@ const ProjectModal: React.FC<{ project: Project; onClose: () => void }> = ({ pro
 
       {/* Modal Content */}
       <motion.div
-        layoutId={`project-card-${project.id}`} // Optional: connect layout to card
-        initial={{ opacity: 0, scale: 0.95, y: 20 }}
-        animate={{ opacity: 1, scale: 1, y: 0 }}
-        exit={{ opacity: 0, scale: 0.95, y: 20 }}
-        transition={{ duration: 0.3 }}
-        className="relative bg-white w-full max-w-4xl max-h-[90vh] rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row"
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.5 }}
+        transition={{ type: "spring", stiffness: 250, damping: 20 }}
+        className="relative bg-white w-full max-w-6xl max-h-[96vh] rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row"
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -186,7 +185,7 @@ const ProjectModal: React.FC<{ project: Project; onClose: () => void }> = ({ pro
         </button>
 
         {/* Left: Carousel (or Top on mobile) */}
-        <div className="w-full md:w-1/2 h-64 md:h-auto bg-slate-100 relative overflow-hidden flex-shrink-0">
+        <div className="w-full md:w-1/2 h-64 md:h-auto bg-gradient-to-br from-slate-100 to-slate-200 relative overflow-hidden flex-shrink-0 flex items-center justify-center">
           {hasImages ? (
             <AnimatePresence initial={false} custom={direction}>
               {!imgError ? (
@@ -214,7 +213,7 @@ const ProjectModal: React.FC<{ project: Project; onClose: () => void }> = ({ pro
                       paginate(-1);
                     }
                   }}
-                  className="absolute inset-0 w-full h-full object-cover"
+                  className="absolute inset-0 w-full h-full object-contain p-3"
                 />
               ) : (
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-slate-400">
@@ -261,7 +260,7 @@ const ProjectModal: React.FC<{ project: Project; onClose: () => void }> = ({ pro
         </div>
 
         {/* Right: Content (or Bottom on mobile) */}
-        <div className="w-full md:w-1/2 p-6 md:p-8 overflow-y-auto max-h-[50vh] md:max-h-[90vh]">
+        <div className="w-full md:w-1/2 p-6 md:p-8 overflow-y-auto max-h-[58vh] md:max-h-[96vh]">
           <h3 className="text-2xl font-bold text-slate-900 mb-2">{project.title}</h3>
           
           <div className="flex flex-wrap gap-2 mb-6">

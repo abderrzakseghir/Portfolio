@@ -7,7 +7,7 @@ interface SkillsProps {
 
 export const Skills: React.FC<SkillsProps> = ({ skills }) => {
   return (
-    <section id="skills" className="py-20 bg-white">
+    <section id="skills" className="py-20 bg-slate-200">
       <div className="container mx-auto px-6">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -29,7 +29,7 @@ export const Skills: React.FC<SkillsProps> = ({ skills }) => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
-                className="px-4 py-2 bg-slate-50 border border-slate-100 text-slate-700 rounded-lg font-medium hover:border-primary-200 hover:text-primary-700 hover:shadow-sm transition-all cursor-default"
+                className="px-4 py-2 bg-slate-300 border border-slate-400 text-slate-900 rounded-lg font-medium hover:border-primary-400 hover:text-primary-700 hover:shadow-sm transition-all cursor-default"
               >
                 {skill}
               </motion.span>

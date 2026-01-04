@@ -27,7 +27,7 @@ export const Header: React.FC = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled || isOpen ? 'bg-white/90 backdrop-blur-md shadow-sm py-4' : 'bg-transparent py-6'
+        isScrolled || isOpen ? 'bg-white/90 backdrop-blur-md shadow-lg py-4' : 'bg-transparent py-6'
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">

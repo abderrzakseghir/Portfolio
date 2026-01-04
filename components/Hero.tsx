@@ -10,7 +10,7 @@ interface HeroProps {
 export const Hero: React.FC<HeroProps> = ({ data }) => {
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-      <div className="absolute top-0 left-0 w-full h-full -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary-50 via-slate-50 to-white opacity-70"></div>
+      <div className="absolute top-0 left-0 w-full h-full -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-300 via-slate-200 to-slate-100 opacity-70"></div>
       
       <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
         

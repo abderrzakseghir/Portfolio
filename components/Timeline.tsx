@@ -10,7 +10,7 @@ interface TimelineProps {
 
 export const Timeline: React.FC<TimelineProps> = ({ education, experience }) => {
   return (
-    <section id="experience" className="py-20 bg-white">
+    <section id="experience" className="py-20 bg-slate-100">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16">
           
@@ -20,7 +20,7 @@ export const Timeline: React.FC<TimelineProps> = ({ education, experience }) => 
               <div className="p-3 bg-primary-100 text-primary-600 rounded-lg mr-4">
                 <Briefcase size={24} />
               </div>
-              <h2 className="text-3xl font-bold text-slate-900">Expérience Pro</h2>
+              <h2 className="text-3xl font-bold text-slate-900">Expérience Professionnel</h2>
             </div>
 
             <div className="space-y-12 border-l-2 border-slate-100 ml-4 pl-8 md:pl-12 relative">
@@ -62,7 +62,7 @@ export const Timeline: React.FC<TimelineProps> = ({ education, experience }) => 
                       transition={{ duration: 0.5 }}
                       className="mb-6"
                    >
-                     <h3 className="text-lg font-bold text-slate-900 mb-4 bg-slate-50 p-3 rounded-lg border border-slate-100 inline-block w-full">
+                     <h3 className="text-lg font-bold text-slate-900 mb-4 inline-block w-full">
                        {edu.school}
                      </h3>
                      
