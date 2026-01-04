@@ -19,7 +19,7 @@ export const Footer: React.FC<FooterProps> = ({ contact }) => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           
           <div>
-            <h2 className="text-3xl font-bold mb-6">Parlons de votre prochain projet</h2>
+            <h2 className="text-3xl font-bold mb-6">Parlons de mon projet</h2>
             <p className="text-slate-400 mb-8 max-w-md text-lg">
               Je suis actuellement à la recherche d'opportunités en CDI. N'hésitez pas à me contacter pour discuter de la façon dont je peux contribuer à votre équipe.
             </p>

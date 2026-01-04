@@ -29,12 +29,14 @@ export const portfolioData: PortfolioData = {
     {
       "id": 2,
       "title": "Prigra",
-      "images": [
+      "images": [   
         "/assets/image/prigra/prigra.png",
+        "/assets/image/prigra/Choose Role.svg",
         "/assets/image/prigra/prigra_frame_1.svg",
         "/assets/image/prigra/prigra_frame_2.svg",
         "/assets/image/prigra/prigra_frame3.svg",
         "/assets/image/prigra/prigra_frame4.svg"
+        
       ],
       "description": "Plateforme web pour la gestion des projets de fin d'étude en Algérie.",
       "technologies": ["Django", "ReactJS"],
@@ -81,10 +83,7 @@ export const portfolioData: PortfolioData = {
       "id": 5,
       "title": "Comiteplus",
       "images": [
-        "/assets/image/esiway/Group 53.png",
-        "/assets/image/esiway/Group 54.png",
-        "/assets/image/esiway/Group 55.png",
-        "/assets/image/esiway/Group 56.png"
+        
       ],
       "description": "Intégration du site web dans une application mobile et réalisation des tests unitaires.",
       "technologies": ["UI", "HTML", "CSS", "PHP", "JavaScript"],
@@ -92,6 +91,59 @@ export const portfolioData: PortfolioData = {
         "Intégration réussie du site web dans une application mobile",
         "Réalisation complète des tests unitaires",
         "Appréhension de l'activité d'un développeur indépendant"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Esiway",
+      "images": [
+        "/assets/image/esiway/es01.png",
+        "/assets/image/esiway/es04.png",
+        "/assets/image/esiway/es07.png",
+        "/assets/image/esiway/es08.png",
+        "/assets/image/esiway/es09.png",
+        "/assets/image/esiway/es10.png",
+        "/assets/image/esiway/es13.png",
+        "/assets/image/esiway/es14.png",
+        "/assets/image/esiway/es21.jpg",
+        "/assets/image/esiway/svg/w1.svg",
+        "/assets/image/esiway/svg/w2.svg",
+        "/assets/image/esiway/svg/w3.svg",
+        "/assets/image/esiway/svg/w4.svg",
+        "/assets/image/esiway/svg/w5.svg"
+      ],
+      "description": "Application mobile Flutter pour simplifier les tâches administratives scolaires. Notre objectif : rationaliser les processus et créer une expérience conviviale. Développée en utilisant les principes de Flutter Clean Architecture.",
+      "technologies": ["Flutter", "Dart"],
+      "achievements": [
+        "Développement d'une application mobile épurée et intuitive",
+        "Implémentation de l'architecture Clean Architecture de Flutter",
+        "Simplification des processus administratifs pour les étudiants",
+        "Interface utilisateur fluide et performante"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Festival Littéraire International",
+      "images": [
+        "/assets/image/festival/ff10.png",
+        "/assets/image/festival/ff9.png",
+        "/assets/image/festival/ff1.png",
+        "/assets/image/festival/ff22.png",
+        "/assets/image/festival/ff33.png",
+        "/assets/image/festival/ff44.png",
+        "/assets/image/festival/ff55.png",
+        "/assets/image/festival/ff66.png",
+        "/assets/image/festival/ff77.png",
+        "/assets/image/festival/ff88.png"
+      ],
+      "description": "Application web pour la gestion du festival littéraire international permettant de faciliter la planification des interventions d'auteurs dans divers établissements. L'application enregistre les données des conférenciers, leurs œuvres et les langues parlées.",
+      "technologies": ["PostgreSQL", "Web Application", "SQL"],
+      "achievements": [
+        "Enregistrement et gestion des données des auteurs et leurs œuvres",
+        "Gestion des demandes d'intervention des établissements participants",
+        "Planification des interventions en tenant compte des contraintes logistiques",
+        "Génération de statistiques pour le suivi des éditions du festival",
+        "Scripts SQL robustes pour assurer la fonctionnalité du système"
       ]
     },
   ],
@@ -107,9 +159,14 @@ export const portfolioData: PortfolioData = {
       "school": "École nationale supérieure d'informatique (ESI) - Algérie",
       "degrees": [
         { 
-          "degree": "Classes Préparatoires & 1ère année Cycle Ingénieur", 
+          "degree": "Classes Préparatoires + concours d'accès aux grandes écoles", 
           "period": "2020 - 2022", 
-          "description": "Formation intensive en Mathématiques, Algorithmique, Recherche Opérationnelle (RO), Électronique et Réseaux." 
+          "description": "Formation intensive en Mathématiques, Algorithmique, Électronique." 
+        },
+         { 
+          "degree": "1ère année Cycle Ingénieur", 
+          "period": "2022 - 2023", 
+          "description": "Formation intensive en conception des base de données, Algorithmique, Recherche Opérationnelle (RO) et Réseaux." 
         }
       ]
     }
@@ -140,8 +197,8 @@ export const portfolioData: PortfolioData = {
   "contact": {
     "email": "abderrazakseghir1@gmail.com",
     "phone": "+33 7 66 72 99 78",
-    "linkedin": "https://linkedin.com/in/abderrazak-seghir",
-    "github": "https://github.com/abderrazak-seghir",
+    "linkedin": "https://www.linkedin.com/in/seghir-abderrazak-248520229/",
+    "github": "https://github.com/abderrzakseghir",
     "location": "France"
   },
   "skills": [
