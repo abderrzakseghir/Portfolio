@@ -219,5 +219,80 @@ export const portfolioData: PortfolioData = {
     "Git", 
     "AWS", 
     "Agile/Scrum"
+  ],
+  "skillCategories": [
+    {
+      "category": "Backend",
+      "icon": "🔧",
+      "color": "from-slate-400 to-slate-500",
+      "skills": [
+        ".NET",
+        "Blazor",
+        "C#",
+        "Python",
+        "Java",
+        "Microservices",
+        "RabbitMQ"
+      ]
+    },
+    {
+      "category": "Frontend",
+      "icon": "🎨",
+      "color": "from-slate-400 to-slate-500",
+      "skills": [
+        "React",
+        "JavaScript",
+        "TypeScript",
+        "MudBlazor",
+        "Flutter"
+      ]
+    },
+    {
+      "category": "Bases de Données",
+      "icon": "💾",
+      "color": "from-slate-400 to-slate-500",
+      "skills": [
+        "PostgreSQL",
+        "SQL Server",
+        "SQL",
+        "MongoDB"
+      ]
+    },
+    {
+      "category": "DevOps & Cloud",
+      "icon": "☁️",
+      "color": "from-slate-400 to-slate-500",
+      "skills": [
+        "Docker",
+        "Kubernetes",
+        "AWS",
+        "CI/CD",
+        "Git",
+      ]
+    },
+    {
+      "category": "Gestion de Projets",
+      "icon": "📊",
+      "color": "from-slate-400 to-slate-500",
+      "skills": [
+        "Agile/Scrum",
+        "Jira",
+        "Trello",
+        "Leadership",
+        "Documentation"
+      ]
+    },
+    {
+      "category": "Outils & Autres",
+      "icon": "🛠️",
+      "color": "from-slate-400 to-slate-500",
+      "skills": [
+        "VS Code",
+        "Visual Studio",
+        "Postman",
+        "GitHub",
+        "REST APIs"
+      ]
+    }
   ]
 };

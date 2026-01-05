@@ -14,7 +14,10 @@ const App: React.FC = () => {
       <Header />
       <main>
         <Hero data={portfolioData.personal} />
-        <Skills skills={portfolioData.skills} />
+        <Skills 
+          skills={portfolioData.skills}
+          skillCategories={portfolioData.skillCategories}
+        />
         <Projects projects={portfolioData.projects} />
         <Timeline 
           education={portfolioData.education} 

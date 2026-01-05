@@ -43,6 +43,13 @@ export interface Contact {
   location: string;
 }
 
+export interface SkillCategory {
+  category: string;
+  icon: string;
+  skills: string[];
+  color: string;
+}
+
 export interface PortfolioData {
   personal: PersonalInfo;
   projects: Project[];
@@ -50,4 +57,5 @@ export interface PortfolioData {
   experience: Experience[];
   contact: Contact;
   skills: string[];
+  skillCategories: SkillCategory[];
 }
