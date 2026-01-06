@@ -18,7 +18,7 @@ export const portfolioData: PortfolioData = {
         "/assets/image/trd_swagger.jpg"
       ],
       "description": "Conception et développement d'une architecture distribuée pour une application de paris sportifs (Coupe du Monde 2026).",
-      "technologies": [".NET 10", "Docker", "PostgreSQL", "RabbitMQ", "DDD"],
+      "technologies": [".NET 10", "Blazor", "Java-Springboot", "Docker", "Kubernetes", "PostgreSQL", "RabbitMQ", "DDD"],
       "achievements": [
         "Architecture en Microservices suivant l'approche Domain-Driven Design (DDD)",
         "Conteneurisation complète de l'infrastructure backend avec Docker",
@@ -57,7 +57,7 @@ export const portfolioData: PortfolioData = {
         "/assets/image/jarvis/jarvis_frame6.svg"
       ],
       "description": "Application mobile de gestion de projets basée sur l'IA.",
-      "technologies": ["Flutter", "NodeJS"],
+      "technologies": ["Flutter", "NodeJS", "Figma"],
       "achievements": [
         "2ème place lors du Hackathon national de 48 heures GDG Devfest",
         "Développement d'une application mobile basée sur l'IA"
@@ -87,7 +87,7 @@ export const portfolioData: PortfolioData = {
 
       ],
       "description": "Intégration du site web dans une application mobile et réalisation des tests unitaires.",
-      "technologies": ["UI", "HTML", "CSS", "PHP", "JavaScript"],
+      "technologies": ["Flutter", "UI", "HTML", "CSS", "PHP", "JavaScript"],
       "achievements": [
         "Intégration réussie du site web dans une application mobile",
         "Réalisation complète des tests unitaires",
@@ -114,7 +114,7 @@ export const portfolioData: PortfolioData = {
         "/assets/image/esiway/svg/w5.svg"
       ],
       "description": "Application mobile Flutter pour simplifier les tâches administratives scolaires. Notre objectif : rationaliser les processus et créer une expérience conviviale. Développée en utilisant les principes de Flutter Clean Architecture.",
-      "technologies": ["Flutter", "Dart"],
+      "technologies": ["Flutter", "Dart", "Figma" ,"Clean Architecture", "Mobile Application"],
       "achievements": [
         "Développement d'une application mobile épurée et intuitive",
         "Implémentation de l'architecture Clean Architecture de Flutter",
@@ -138,7 +138,7 @@ export const portfolioData: PortfolioData = {
         "/assets/image/festival/ff88.png"
       ],
       "description": "Application web pour la gestion du festival littéraire international permettant de faciliter la planification des interventions d'auteurs dans divers établissements. L'application enregistre les données des conférenciers, leurs œuvres et les langues parlées.",
-      "technologies": ["PostgreSQL", "Web Application", "SQL"],
+      "technologies": ["PostgreSQL", "SQL", "Django", "Web Application"],
       "achievements": [
         "Enregistrement et gestion des données des auteurs et leurs œuvres",
         "Gestion des demandes d'intervention des établissements participants",
