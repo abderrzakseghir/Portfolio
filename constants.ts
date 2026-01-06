@@ -294,5 +294,38 @@ export const portfolioData: PortfolioData = {
         "REST APIs"
       ]
     }
+  ],
+  "hobbies": [
+     {
+  "id": 1,
+  "name": "Course des 10 km de la Saint-Nicolas",
+  "type": "Course à pied",
+  "date": "30 Novembre 2025",
+  "location": "Nancy, France",
+  "description": "Participation à la course des 10 km de la Saint-Nicolas avec l’IDMC",
+  "coverImage": "/assets/image/hobbies/stnicolas.jpeg",
+  "details": "Participation à la traditionnelle course des 10 km de la Saint-Nicolas organisée à Nancy, aux côtés des étudiants et enseignants de l’IDMC. Malgré des conditions météorologiques difficiles marquées par la pluie, l’événement s’est déroulé dans une ambiance conviviale et motivante."
+},
+  {
+  "id": 2,
+  "name": "Concours de code Euro-Information",
+  "type": "Hackathon",
+  "date": "07 Octobre 2024",
+  "location": "France",
+  "description": "Participation à un concours de code organisé par Euro-Information",
+  "coverImage": "/assets/image/hobbies/euroinfo.jpg",
+  "details": "Concours de code organisé par Euro-Information en partenariat avec plusieurs écoles d’ingénieurs. Deux heures intenses dédiées à la résolution de défis techniques, au test d’idées et au dépassement de soi dans une ambiance hackathon. Une expérience enrichissante favorisant l’échange avec des professionnels, la découverte de nouvelles technologies et le travail sous pression dans un cadre stimulant."
+  },
+    {
+  "id": 3,
+  "name": "GDG Devfest Hackathon",
+  "type": "Hackathon",
+  "date": "2023",
+  "location": "ESI Sidi Bel Abbès, Algérie",
+  "description": "Hackathon national de 24 heures organisé lors du GDG Devfest",
+  "coverImage": "/assets/image/hobbies/devfest.png",
+  "details": "Participation au GDG Devfest Hackathon à l’ESI Sidi Bel Abbès. En équipe, nous avons conçu, designé et développé en 24 heures une application mobile nommée JARVIS, basée sur l’IA et le NLP, visant à améliorer la productivité et la gestion de projets. Le projet couvrait tout le cycle produit : idéation, prototypage et implémentation. Notre équipe a remporté la 2ᵉ place au niveau national. Cette expérience a renforcé mes compétences en travail d’équipe, innovation, développement sous pression et intégration de technologies d’IA."
+},
+   
   ]
 };

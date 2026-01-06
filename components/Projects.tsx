@@ -29,11 +29,11 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-12"
+          className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold text-slate-900 mb-4">Projets Réalisés</h2>
-          <div className="w-16 h-1 bg-primary-500 rounded-full mb-4"></div>
-          <p className="text-slate-600 max-w-2xl">
+          <h2 className="text-4xl font-bold text-slate-900 mb-4">Projets Réalisés</h2>
+          <div className="w-16 h-1 bg-primary-500 rounded-full mb-4 mx-auto"></div>
+          <p className="text-slate-600 max-w-2xl mx-auto">
             Cliquez sur un projet pour voir les détails, les captures d'écran et les technologies utilisées.
           </p>
         </motion.div>

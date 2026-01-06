@@ -50,6 +50,17 @@ export interface SkillCategory {
   color: string;
 }
 
+export interface Hobby {
+  id: number;
+  name: string;
+  type: string;
+  date: string;
+  location: string;
+  description: string;
+  coverImage: string;
+  details?: string;
+}
+
 export interface PortfolioData {
   personal: PersonalInfo;
   projects: Project[];
@@ -58,4 +69,5 @@ export interface PortfolioData {
   contact: Contact;
   skills: string[];
   skillCategories: SkillCategory[];
+  hobbies?: Hobby[];
 }

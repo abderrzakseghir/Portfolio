@@ -6,6 +6,7 @@ import { Hero } from './components/Hero';
 import { Skills } from './components/Skills';
 import { Projects } from './components/Projects';
 import { Timeline } from './components/Timeline';
+import { Hobbies } from './components/Hobbies';
 import { Footer } from './components/Footer';
 
 const App: React.FC = () => {
@@ -23,6 +24,9 @@ const App: React.FC = () => {
           education={portfolioData.education} 
           experience={portfolioData.experience} 
         />
+        {portfolioData.hobbies && portfolioData.hobbies.length > 0 && (
+          <Hobbies hobbies={portfolioData.hobbies} />
+        )}
       </main>
       <Footer contact={portfolioData.contact} />
     </div>
