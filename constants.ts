@@ -320,7 +320,7 @@ export const portfolioData: PortfolioData = {
   "id": 3,
   "name": "GDG Devfest Hackathon",
   "type": "Hackathon",
-  "date": "2023",
+  "date": "1 Janvier 2023",
   "location": "ESI Sidi Bel Abbès, Algérie",
   "description": "Hackathon national de 24 heures organisé lors du GDG Devfest",
   "coverImage": "/assets/image/hobbies/devfest.png",
