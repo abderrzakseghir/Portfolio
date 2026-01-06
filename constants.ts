@@ -311,7 +311,7 @@ export const portfolioData: PortfolioData = {
   "name": "Concours de code Euro-Information",
   "type": "Hackathon",
   "date": "07 Octobre 2024",
-  "location": "France",
+  "location": "Nancy, France",
   "description": "Participation à un concours de code organisé par Euro-Information",
   "coverImage": "/assets/image/hobbies/euroinfo.jpg",
   "details": "Concours de code organisé par Euro-Information en partenariat avec plusieurs écoles d’ingénieurs. Deux heures intenses dédiées à la résolution de défis techniques, au test d’idées et au dépassement de soi dans une ambiance hackathon. Une expérience enrichissante favorisant l’échange avec des professionnels, la découverte de nouvelles technologies et le travail sous pression dans un cadre stimulant."
