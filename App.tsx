@@ -8,6 +8,7 @@ import { Projects } from './components/Projects';
 import { Timeline } from './components/Timeline';
 import { Hobbies } from './components/Hobbies';
 import { Footer } from './components/Footer';
+import { Resume } from './components/Resume.tsx';
 
 const App: React.FC = () => {
   return (
@@ -24,6 +25,7 @@ const App: React.FC = () => {
           education={portfolioData.education} 
           experience={portfolioData.experience} 
         />
+        <Resume data={portfolioData} />
         {portfolioData.hobbies && portfolioData.hobbies.length > 0 && (
           <Hobbies hobbies={portfolioData.hobbies} />
         )}

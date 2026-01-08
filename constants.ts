@@ -6,7 +6,7 @@ export const portfolioData: PortfolioData = {
     "title": "Développeur Full Stack",
     "status": "Étudiant en Master 2 MIAGE-SID",
     "objective": "Recherche un poste en CDI pour mettre en valeur mes compétences et apprendre de nouvelles technologies",
-    "description": "Développeur Full Stack avec des compétences en .NET, Blazor, et SQL Server. Actuellement en dernière année de Master 2 MIAGE spécialité SID, je recherche un poste en CDI pour appliquer mes compétences et continuer à apprendre. J'ai une expérience en gestion de projets, et je suis certifié AWS Certified Cloud Practitioner (CLF-C02)",
+    "description": "Développeur Full Stack avec des compétences en .NET, Blazor, et mobile Flutter. Actuellement en dernière année de Master 2 MIAGE spécialité SID, je recherche un poste en CDI pour appliquer mes compétences et continuer à apprendre. J'ai une expérience en gestion de projets, et je prépare le certificat AWS Certified Cloud Practitioner (CLF-C02)",
     "avatar": "/assets/image/avatar.jpg"
   },
   "projects": [
@@ -160,14 +160,14 @@ export const portfolioData: PortfolioData = {
       "school": "École nationale supérieure d'informatique (ESI) - Algérie",
       "degrees": [
         { 
-          "degree": "Classes Préparatoires + concours d'accès aux grandes écoles", 
-          "period": "2020 - 2022", 
-          "description": "Formation intensive en Mathématiques, Algorithmique, Électronique." 
-        },
-         { 
           "degree": "1ère année Cycle Ingénieur", 
           "period": "2022 - 2023", 
           "description": "Formation intensive en conception des base de données, Algorithmique, Recherche Opérationnelle (RO) et Réseaux." 
+        },
+        { 
+          "degree": "Classes Préparatoires + concours d'accès aux grandes écoles", 
+          "period": "2020 - 2022", 
+          "description": "Formation intensive en Mathématiques, Algorithmique, Électronique." 
         }
       ]
     }
@@ -310,7 +310,7 @@ export const portfolioData: PortfolioData = {
   "id": 2,
   "name": "Concours de code Euro-Information",
   "type": "Hackathon",
-  "date": "07 Octobre 2024",
+  "date": "07 Octobre 2025",
   "location": "Nancy, France",
   "description": "Participation à un concours de code organisé par Euro-Information",
   "coverImage": "/assets/image/hobbies/euroinfo.jpg",
@@ -320,7 +320,7 @@ export const portfolioData: PortfolioData = {
   "id": 3,
   "name": "GDG Devfest Hackathon",
   "type": "Hackathon",
-  "date": "1 Janvier 2023",
+  "date": "01 Janvier 2023",
   "location": "ESI Sidi Bel Abbès, Algérie",
   "description": "Hackathon national de 24 heures organisé lors du GDG Devfest",
   "coverImage": "/assets/image/hobbies/devfest.png",

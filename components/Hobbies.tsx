@@ -19,7 +19,7 @@ export const Hobbies: React.FC<HobbiesProps> = ({ hobbies }) => {
   };
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-200">
+    <section id="hobbies" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-200">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="mb-16 text-center">

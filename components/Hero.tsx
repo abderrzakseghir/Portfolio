@@ -48,12 +48,13 @@ export const Hero: React.FC<HeroProps> = ({ data }) => {
               <Send size={18} className="mr-2" />
               Me contacter
             </a>
-            <button 
+            <a 
+              href="#resume" 
               className="inline-flex items-center px-6 py-3 bg-white text-slate-700 border border-slate-200 font-medium rounded-lg hover:bg-slate-50 transition-colors"
             >
               <FileText size={18} className="mr-2" />
-              Télécharger CV
-            </button>
+              Voir CV
+            </a>
           </div>
         </motion.div>
 
