@@ -619,7 +619,7 @@ export const Resume: React.FC<ResumeProps> = ({ data }) => {
         }
         @media print {
           @page {
-            size: 210mm 297mm;
+            size: A4 portrait;
             margin: 0 !important;
           }
           
@@ -630,6 +630,9 @@ export const Resume: React.FC<ResumeProps> = ({ data }) => {
             padding: 0 !important;
             overflow: hidden !important;
             background: white !important;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+            color-adjust: exact !important;
           }
           
           /* Hide everything */
@@ -643,17 +646,18 @@ export const Resume: React.FC<ResumeProps> = ({ data }) => {
             visibility: visible !important;
           }
           
-          /* Position and size the CV exactly to A4 */
+          /* Scale the CV to fit A4 exactly while preserving screen proportions */
+          /* Screen CV: max-height 800px with aspect 210/297 = width ~566px */
+          /* A4 in pixels at 96dpi: 794px x 1123px */
+          /* Scale factor: 1123/800 = 1.40375 */
           #cv-print-area {
             position: fixed !important;
             left: 0 !important;
             top: 0 !important;
-            width: 210mm !important;
-            height: 297mm !important;
-            max-height: 297mm !important;
-            min-height: 297mm !important;
-            max-width: 210mm !important;
-            min-width: 210mm !important;
+            width: 566px !important;
+            height: 800px !important;
+            transform: scale(1.40375) !important;
+            transform-origin: top left !important;
             display: flex !important;
             flex-direction: row !important;
             overflow: hidden !important;
@@ -662,48 +666,25 @@ export const Resume: React.FC<ResumeProps> = ({ data }) => {
             margin: 0 !important;
             padding: 0 !important;
             background: white !important;
-            page-break-after: avoid !important;
-            page-break-before: avoid !important;
-            page-break-inside: avoid !important;
-            break-after: avoid !important;
-            break-before: avoid !important;
-            break-inside: avoid !important;
           }
           
           .resume-sidebar {
-            width: 67mm !important;
-            min-width: 67mm !important;
-            max-width: 67mm !important;
+            width: 32% !important;
             background-color: #0f172a !important;
             -webkit-print-color-adjust: exact !important;
             print-color-adjust: exact !important;
             color-adjust: exact !important;
-            padding: 5mm 4mm !important;
-            height: 297mm !important;
-            max-height: 297mm !important;
-            min-height: 297mm !important;
+            height: 100% !important;
             overflow: hidden !important;
             flex-shrink: 0 !important;
           }
           
           .resume-main {
-            width: 143mm !important;
-            min-width: 143mm !important;
-            max-width: 143mm !important;
-            padding: 5mm 6mm !important;
-            height: 297mm !important;
-            max-height: 297mm !important;
-            min-height: 297mm !important;
+            width: 68% !important;
+            height: 100% !important;
             overflow: hidden !important;
             background: white !important;
             flex-shrink: 0 !important;
-          }
-          
-          /* Prevent any page breaks inside */
-          .resume-sidebar *,
-          .resume-main * {
-            page-break-inside: avoid !important;
-            break-inside: avoid !important;
           }
           
           /* Ensure colors print correctly */
