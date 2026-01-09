@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { portfolioData } from './constants.ts';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
@@ -31,6 +32,7 @@ const App: React.FC = () => {
         )}
       </main>
       <Footer contact={portfolioData.contact} />
+      <Analytics />
     </div>
   );
 };
