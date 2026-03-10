@@ -5,8 +5,8 @@ export const portfolioData: PortfolioData = {
     "name": "Abderrazak Seghir",
     "title": "Développeur Full Stack",
     "status": "Étudiant en Master 2 MIAGE-SID",
-    "objective": "Recherche un poste en Alternance pour mettre en valeur mes compétences et apprendre de nouvelles technologies",
-    "description": "Développeur Full Stack avec des compétences en .NET, Blazor, et mobile Flutter. Actuellement en dernière année de Master 2 MIAGE spécialité SID, je recherche un poste en Alternance pour appliquer mes compétences et continuer à apprendre. J'ai une expérience en gestion de projets, et je prépare le certificat AWS Certified Cloud Practitioner (CLF-C02)",
+    "objective": "Rechercher une alternance en tant que Chef de Projet SI & Innovation pour piloter des solutions technologiques et accompagner la transformation numérique de l'entreprise.",
+    "description": "Développeur Full Stack spécialisé en .NET, Blazor et Flutter, je suis actuellement en dernière année de Master 2 MIAGE (spécialité SID). Fort d'une expérience en gestion de projets techniques, je recherche une alternance en tant que Chef de Projet Système d'Information et Innovation. Mon objectif est de mettre à profit mes compétences techniques tout en pilotant des projets innovants. Je prépare parallèlement la certification AWS Certified Cloud Practitioner (CLF-C02).",
     "avatar": "/assets/image/avatar.jpg"
   },
   "projects": [
