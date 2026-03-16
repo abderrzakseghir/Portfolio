@@ -6,7 +6,7 @@ export const portfolioData: PortfolioData = {
     "title": "Développeur Full Stack",
     "status": "Étudiant en Master 2 MIAGE-SID",
     "objective": "Rechercher une alternance en tant que Chef de Projet SI & Innovation pour piloter des solutions technologiques et accompagner la transformation numérique de l'entreprise.",
-    "description": "Développeur Full Stack spécialisé en .NET, Blazor et Flutter, je suis actuellement en dernière année de Master 2 MIAGE (spécialité SID). Fort d'une expérience en gestion de projets techniques, Mon objectif est de mettre à profit mes compétences techniques tout en pilotant des projets innovants. Je prépare parallèlement la certification AWS Certified Cloud Practitioner (CLF-C02).",
+    "description": "Développeur Full Stack spécialisé en .NET, Blazor et Flutter, je suis actuellement en dernière année de Master 2 MIAGE (spécialité SID). Fort d'une expérience en gestion de projets techniques, je recherche une alternance en tant que Chef de Projet Système d'Information et Innovation. Mon objectif est de mettre à profit mes compétences techniques tout en pilotant des projets innovants. Je prépare parallèlement la certification AWS Certified Cloud Practitioner (CLF-C02).",
     "avatar": "/assets/image/avatar.jpg"
   },
   "projects": [

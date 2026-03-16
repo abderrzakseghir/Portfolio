@@ -123,7 +123,7 @@ export const Resume: React.FC<ResumeProps> = ({ data }) => {
                   </li>
                   <li className="flex items-center text-[9px] text-slate-300 gap-1.5">
                     <Car size={10} className="text-primary-500 shrink-0" />
-                    Permis B
+                    Véhiculé
                   </li>
                   <li className="flex items-center text-[9px] text-slate-300 gap-1.5">
                     <Linkedin size={10} className="text-primary-500 shrink-0" />
@@ -191,13 +191,12 @@ export const Resume: React.FC<ResumeProps> = ({ data }) => {
           <main className="resume-main w-[68%] p-4 md:p-5 overflow-hidden print:w-[68%] print:p-4">
             
             {/* Recherche d'Alternance Banner */}
-          {/*  <div className="mb-3 p-2 bg-primary-50 border border-primary-200 rounded-lg">
+            <div className="mb-3 p-2 bg-primary-50 border border-primary-200 rounded-lg">
               <p className="flex items-center text-[11px] font-bold text-primary-700 uppercase tracking-wide">
                 <Target size={14} className="mr-2 text-primary-600" />
                 Recherche d'Alternance - Septembre 2026
               </p>
-              
-            </div>*/}
+            </div>
 
             {/* Header / Summary */}
             <header className="mb-3">
@@ -437,7 +436,7 @@ export const Resume: React.FC<ResumeProps> = ({ data }) => {
                         </li>
                         <li className="flex items-center text-[9px] text-slate-300 gap-1.5">
                           <Car size={10} className="text-primary-500 shrink-0" />
-                          Permis B
+                          Véhiculé
                         </li>
                         <li className="flex items-center text-[9px] text-slate-300 gap-1.5">
                           <Linkedin size={10} className="text-primary-500 shrink-0" />
