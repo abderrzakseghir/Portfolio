@@ -192,10 +192,11 @@ export const Resume: React.FC<ResumeProps> = ({ data }) => {
             
             {/* Recherche d'Alternance Banner */}
             <div className="mb-3 p-2 bg-primary-50 border border-primary-200 rounded-lg">
-              <p className="flex items-center text-[11px] font-bold text-primary-700 uppercase tracking-wide">
+             {/* <p className="flex items-center text-[11px] font-bold text-primary-700 uppercase tracking-wide">
                 <Target size={14} className="mr-2 text-primary-600" />
                 Recherche d'Alternance - Septembre 2026
               </p>
+              */}
             </div>
 
             {/* Header / Summary */}
