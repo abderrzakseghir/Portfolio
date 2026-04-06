@@ -4,6 +4,8 @@
 
 **Développeur Full Stack | Master 2 MIAGE-SID | En recherche de CDI**
 
+[Portfolio](https://seghir-portfolio.vercel.app) · [LinkedIn](https://linkedin.com/in/abderrazak-seghir) · [GitHub](https://github.com/abderrazak-seghir) · [Email](mailto:abderrazakseghir1@gmail.com)
+
 </div>
 
 ## À propos
