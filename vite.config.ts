@@ -13,6 +13,9 @@ export default defineConfig(({ mode }) => {
         port: 3000,
         host: '0.0.0.0',
       },
+      build: {
+        outDir: 'dist',
+      },
       plugins: [react()],
       resolve: {
         alias: {
