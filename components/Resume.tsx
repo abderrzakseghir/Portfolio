@@ -190,11 +190,11 @@ export const Resume: React.FC<ResumeProps> = ({ data }) => {
           {/* MAIN CONTENT (68%) */}
           <main className="resume-main w-[68%] p-4 md:p-5 overflow-hidden print:w-[68%] print:p-4">
             
-            {/* Recherche d'Alternance Banner */}
+            {/* Recherche CDI Banner */}
             <div className="mb-3 p-2 bg-primary-50 border border-primary-200 rounded-lg">
               <p className="flex items-center text-[11px] font-bold text-primary-700 uppercase tracking-wide">
                 <Target size={14} className="mr-2 text-primary-600" />
-                Recherche d'Alternance - Septembre 2026
+                Recherche de CDI - Septembre 2026
               </p>
             </div>
 
@@ -502,11 +502,11 @@ export const Resume: React.FC<ResumeProps> = ({ data }) => {
 
                 {/* MAIN CONTENT (68%) */}
                 <main className="w-[68%] p-4 overflow-hidden">
-                  {/* Recherche d'Alternance Banner */}
+                  {/* Recherche de CDI Banner */}
                   <div className="mb-3 p-2 bg-primary-50 border border-primary-200 rounded-lg">
                     <p className="flex items-center text-[11px] font-bold text-primary-700 uppercase tracking-wide">
                       <Target size={14} className="mr-2 text-primary-600" />
-                      Recherche d'Alternance - Septembre 2026
+                      Recherche de CDI - Septembre 2026
                     </p>
                   </div>
 

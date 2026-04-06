@@ -5,8 +5,8 @@ export const portfolioData: PortfolioData = {
     "name": "Abderrazak Seghir",
     "title": "Développeur Full Stack",
     "status": "Étudiant en Master 2 MIAGE-SID",
-    "objective": "Rechercher une alternance en tant que Chef de Projet SI & Innovation pour piloter des solutions technologiques et accompagner la transformation numérique de l'entreprise.",
-    "description": "Développeur Full Stack spécialisé en .NET, Blazor et Flutter, je suis actuellement en dernière année de Master 2 MIAGE (spécialité SID). Fort d'une expérience en gestion de projets techniques, je recherche une alternance en tant que Chef de Projet Système d'Information et Innovation. Mon objectif est de mettre à profit mes compétences techniques tout en pilotant des projets innovants. Je prépare parallèlement la certification AWS Certified Cloud Practitioner (CLF-C02).",
+    "objective": "Recherche un poste en CDI pour mettre en valeur mes compétences et apprendre de nouvelles technologies",
+    "description": "Développeur Full Stack avec des compétences en .NET, Blazor, et mobile Flutter. Actuellement en dernière année de Master 2 MIAGE spécialité SID, je recherche un poste en CDI pour appliquer mes compétences et continuer à apprendre. J'ai une expérience en gestion de projets, et je prépare le certificat AWS Certified Cloud Practitioner (CLF-C02)",
     "avatar": "/assets/image/avatar.jpg"
   },
   "projects": [
@@ -296,8 +296,17 @@ export const portfolioData: PortfolioData = {
     }
   ],
   "hobbies": [
+   { "id": 1,
+  "name": "Semi Marathon de Nancy",
+  "type": "Course à pied",
+  "date": "29 mars 2026",
+  "location": "Nancy, France",
+  "description": "Participation au Semi Marathon de Nancy avec l’IDMC",
+  "coverImage": "/assets/image/hobbies/semimarathon2026.jpeg",
+  "details": "Dimanche 29 mars 2026, parmi plus de 7500 coureurs rassemblés place Stanislas, 13 enseignants et étudiants de l’IDMC ont une nouvelle fois pris le départ du Semi-Marathon de Nancy ! 🎽💙Après 21 km d’effort et de persévérance, ils ont tous franchi la ligne d’arrivée, portés par leur détermination et le soutien des supporters présents. Un immense bravo à eux pour leurs belles performances !"
+},
      {
-  "id": 1,
+  "id": 2,
   "name": "Course des 10 km de la Saint-Nicolas",
   "type": "Course à pied",
   "date": "30 Novembre 2025",
@@ -307,7 +316,7 @@ export const portfolioData: PortfolioData = {
   "details": "Participation à la traditionnelle course des 10 km de la Saint-Nicolas organisée à Nancy, aux côtés des étudiants et enseignants de l’IDMC. Malgré des conditions météorologiques difficiles marquées par la pluie, l’événement s’est déroulé dans une ambiance conviviale et motivante."
 },
   {
-  "id": 2,
+  "id": 3,
   "name": "Concours de code Euro-Information",
   "type": "Hackathon",
   "date": "07 Octobre 2025",
@@ -317,7 +326,7 @@ export const portfolioData: PortfolioData = {
   "details": "Concours de code organisé par Euro-Information en partenariat avec plusieurs écoles d’ingénieurs. Deux heures intenses dédiées à la résolution de défis techniques, au test d’idées et au dépassement de soi dans une ambiance hackathon. Une expérience enrichissante favorisant l’échange avec des professionnels, la découverte de nouvelles technologies et le travail sous pression dans un cadre stimulant."
   },
     {
-  "id": 3,
+  "id": 4,
   "name": "GDG Devfest Hackathon",
   "type": "Hackathon",
   "date": "01 Janvier 2023",
