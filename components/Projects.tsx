@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, X, Maximize2, Layers } from 'lucide-react';
+import { ChevronLeft, ChevronRight, X, Maximize2, Layers, ZoomIn } from 'lucide-react';
 import { Project } from '../types';
 
 interface ProjectsProps {
@@ -129,6 +129,19 @@ const ProjectModal: React.FC<{ project: Project; onClose: () => void }> = ({ pro
   const [page, setPage] = useState(0);
   const [direction, setDirection] = useState(0);
   const [imgError, setImgError] = useState(false);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+
+  // Keyboard: Escape closes fullscreen or modal
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        if (isFullscreen) setIsFullscreen(false);
+        else onClose();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isFullscreen, onClose]);
 
   // If we have images, calculate index. If array is empty, handle safely.
   const hasImages = project.images && project.images.length > 0;
@@ -174,7 +187,7 @@ const ProjectModal: React.FC<{ project: Project; onClose: () => void }> = ({ pro
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.5 }}
         transition={{ type: "spring", stiffness: 250, damping: 20 }}
-        className="relative bg-white w-full max-w-6xl max-h-[96vh] rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row"
+        className="relative bg-white w-full max-w-6xl h-[55vh] rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row"
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -185,7 +198,7 @@ const ProjectModal: React.FC<{ project: Project; onClose: () => void }> = ({ pro
         </button>
 
         {/* Left: Carousel (or Top on mobile) */}
-        <div className="w-full md:w-1/2 h-64 md:h-auto bg-gradient-to-br from-slate-100 to-slate-200 relative overflow-hidden flex-shrink-0 flex items-center justify-center">
+        <div className="w-full md:w-1/2 h-40 md:h-full bg-gradient-to-br from-slate-100 to-slate-200 relative overflow-hidden flex-shrink-0 flex items-center justify-center">
           {hasImages ? (
             <AnimatePresence initial={false} custom={direction}>
               {!imgError ? (
@@ -213,7 +226,8 @@ const ProjectModal: React.FC<{ project: Project; onClose: () => void }> = ({ pro
                       paginate(-1);
                     }
                   }}
-                  className="absolute inset-0 w-full h-full object-contain p-3"
+                  className="absolute inset-0 w-full h-full object-contain p-3 cursor-zoom-in"
+                  onClick={() => setIsFullscreen(true)}
                 />
               ) : (
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-slate-400">
@@ -226,6 +240,17 @@ const ProjectModal: React.FC<{ project: Project; onClose: () => void }> = ({ pro
             <div className="absolute inset-0 flex items-center justify-center bg-slate-200 text-slate-400">
                <span className="italic">Aucune image disponible</span>
             </div>
+          )}
+
+          {/* Fullscreen zoom button */}
+          {hasImages && !imgError && (
+            <button
+              className="absolute top-2 left-2 z-10 p-1.5 bg-black/30 hover:bg-black/60 text-white rounded-full transition-colors"
+              onClick={() => setIsFullscreen(true)}
+              title="Voir en plein écran"
+            >
+              <ZoomIn size={16} />
+            </button>
           )}
 
           {/* Carousel Controls */}
@@ -260,7 +285,7 @@ const ProjectModal: React.FC<{ project: Project; onClose: () => void }> = ({ pro
         </div>
 
         {/* Right: Content (or Bottom on mobile) */}
-        <div className="w-full md:w-1/2 p-6 md:p-8 overflow-y-auto max-h-[58vh] md:max-h-[96vh]">
+        <div className="w-full md:w-1/2 p-4 md:p-6 overflow-y-auto flex-1">
           <h3 className="text-2xl font-bold text-slate-900 mb-2">{project.title}</h3>
           
           <div className="flex flex-wrap gap-2 mb-6">
@@ -298,6 +323,91 @@ const ProjectModal: React.FC<{ project: Project; onClose: () => void }> = ({ pro
           </div>
         </div>
       </motion.div>
+
+      {/* Fullscreen image viewer */}
+      <AnimatePresence>
+        {isFullscreen && hasImages && !imgError && (
+          <motion.div
+            key="fullscreen"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[60] bg-black/95 flex items-center justify-center"
+            onClick={() => setIsFullscreen(false)}
+          >
+            {/* Close fullscreen */}
+            <button
+              onClick={() => setIsFullscreen(false)}
+              className="absolute top-4 right-4 p-2 bg-white/10 hover:bg-white/20 text-white rounded-full transition-colors z-10"
+              title="Fermer (Échap)"
+            >
+              <X size={24} />
+            </button>
+
+            {/* Navigation arrows */}
+            {project.images.length > 1 && (
+              <>
+                <button
+                  className="absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-white/10 hover:bg-white/20 text-white rounded-full transition-colors z-10"
+                  onClick={(e) => { e.stopPropagation(); paginate(-1); }}
+                >
+                  <ChevronLeft size={28} />
+                </button>
+                <button
+                  className="absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-white/10 hover:bg-white/20 text-white rounded-full transition-colors z-10"
+                  onClick={(e) => { e.stopPropagation(); paginate(1); }}
+                >
+                  <ChevronRight size={28} />
+                </button>
+              </>
+            )}
+
+            {/* Image with slide animation */}
+            <div className="relative overflow-hidden" style={{ width: 'min(95vw, 1400px)', height: 'min(90vh, 900px)' }}>
+              <AnimatePresence initial={false} custom={direction}>
+                <motion.img
+                  key={currentImage}
+                  src={currentImage}
+                  alt={project.title}
+                  custom={direction}
+                  variants={variants}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  transition={{
+                    x: { type: 'spring', stiffness: 300, damping: 30 },
+                    opacity: { duration: 0.2 }
+                  }}
+                  drag="x"
+                  dragConstraints={{ left: 0, right: 0 }}
+                  dragElastic={1}
+                  onDragEnd={(e, { offset, velocity }) => {
+                    const swipe = Math.abs(offset.x) * velocity.x;
+                    if (swipe < -10000) paginate(1);
+                    else if (swipe > 10000) paginate(-1);
+                  }}
+                  className="absolute inset-0 w-full h-full object-contain select-none"
+                  onClick={(e) => e.stopPropagation()}
+                />
+              </AnimatePresence>
+            </div>
+
+            {/* Dots indicator */}
+            {project.images.length > 1 && (
+              <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-2">
+                {project.images.map((_, idx) => (
+                  <div
+                    key={idx}
+                    className={`h-1.5 rounded-full transition-all duration-300 ${
+                      idx === imageIndex ? 'bg-white w-6' : 'bg-white/40 w-1.5'
+                    }`}
+                  />
+                ))}
+              </div>
+            )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
