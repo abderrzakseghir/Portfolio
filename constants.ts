@@ -14,8 +14,12 @@ export const portfolioData: PortfolioData = {
       "id": 1,
       "title": "TRD - Paris Sportifs (Microservices)",
       "images": [
-        "/assets/image/trd_architecture.jpg",
-        "/assets/image/trd_swagger.jpg"
+        "/assets/image/trd/trd2.png",
+        "/assets/image/trd/trd1.png",
+        "/assets/image/trd/trd3.png",
+        "/assets/image/trd/trd6.png",
+        "/assets/image/trd/trd5.png",
+        "/assets/image/trd/trd4.png"
       ],
       "description": "Conception et développement d'une architecture distribuée pour une application de paris sportifs (Coupe du Monde 2026).",
       "technologies": [".NET 10", "Blazor", "Java-Springboot", "Docker", "Kubernetes", "PostgreSQL", "RabbitMQ", "DDD"],
@@ -67,7 +71,11 @@ export const portfolioData: PortfolioData = {
       "id": 4,
       "title": "MByte - Intégration de Stockage Externe",
       "images": [
-        "/assets/image/storage_integration.jpg"
+        "/assets/image/mbyte/mbyte1.png",
+        "/assets/image/mbyte/mbyte2.png",
+        "/assets/image/mbyte/mbyte3.png",
+        "/assets/image/mbyte/mbyte4.png",
+        "/assets/image/mbyte/mbyte5.png"
       ],
       "description": "Intégration transparente de stockages externes (S3, WebDAV) avec chiffrement des données.",
       "technologies": ["S3", "WebDAV", "Encryption", "Backend"],
