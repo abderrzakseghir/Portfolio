@@ -33,45 +33,9 @@ export const portfolioData: PortfolioData = {
         "Gestion de la cohérence des données et déploiement CI/CD"
       ]
     },
-    {
+
+ {
       "id": 2,
-      "title": "Prigra",
-      "images": [   
-        "/assets/image/prigra/prigra.png",
-        "/assets/image/prigra/Choose Role.svg",
-        "/assets/image/prigra/prigra_frame_1.svg",
-        "/assets/image/prigra/prigra_frame_2.svg",
-        "/assets/image/prigra/prigra_frame3.svg",
-        "/assets/image/prigra/prigra_frame4.svg"
-        
-      ],
-      "description": "Plateforme web pour la gestion des projets de fin d'étude en Algérie.",
-      "technologies": ["Django", "ReactJS"],
-      "achievements": [
-        "Conception et développement des fonctionnalités principales",
-        "Intégration du front-end avec le back-end",
-        "Utilisation des pratiques de la méthodologie Agile Scrum"
-      ]
-    },
-    {
-      "id": 3,
-      "title": "JARVIS",
-      "images": [
-        "/assets/image/jarvis/jarvis_1.svg",
-        "/assets/image/jarvis/jarvis_fram3.svg",
-        "/assets/image/jarvis/jarvis_frame4.svg",
-        "/assets/image/jarvis/jarvis_frame5.svg",
-        "/assets/image/jarvis/jarvis_frame6.svg"
-      ],
-      "description": "Application mobile de gestion de projets basée sur l'IA.",
-      "technologies": ["Flutter", "NodeJS", "Figma"],
-      "achievements": [
-        "2ème place lors du Hackathon national de 48 heures GDG Devfest",
-        "Développement d'une application mobile basée sur l'IA"
-      ]
-    }, 
-    {
-      "id": 4,
       "title": "MByte - Intégration de Stockage Externe",
       "images": [
         "/assets/image/mbyte/mbytepr1.png",
@@ -97,9 +61,84 @@ export const portfolioData: PortfolioData = {
         "Architecture multi-backend avec redondance et load balancing",
         "Stockage intelligent et récupération optimale pour performance et fiabilité"
       ]
+    }
+
+    ,
+{
+      "id": 3,
+      "title": "Esiway",
+      "images": [
+        "/assets/image/esiway/es01.png",
+        "/assets/image/esiway/es04.png",
+        "/assets/image/esiway/es07.png",
+        "/assets/image/esiway/es08.png",
+        "/assets/image/esiway/es09.png",
+        "/assets/image/esiway/es10.png",
+        "/assets/image/esiway/es13.png",
+        "/assets/image/esiway/es14.png",
+        "/assets/image/esiway/es21.jpg",
+        "/assets/image/esiway/svg/w1.svg",
+        "/assets/image/esiway/svg/w2.svg",
+        "/assets/image/esiway/svg/w3.svg",
+        "/assets/image/esiway/svg/w4.svg",
+        "/assets/image/esiway/svg/w5.svg"
+      ],
+      "description": "Application mobile Flutter pour simplifier les tâches administratives scolaires. Notre objectif : rationaliser les processus et créer une expérience conviviale. Développée en utilisant les principes de Flutter Clean Architecture.",
+      "technologies": ["Flutter", "Dart", "Figma" ,"Clean Architecture", "Mobile Application"],
+      "achievements": [
+        "Développement d'une application mobile épurée et intuitive",
+        "Implémentation de l'architecture Clean Architecture de Flutter",
+        "Simplification des processus administratifs pour les étudiants",
+        "Interface utilisateur fluide et performante"
+      ]
     },
-        {
+
+    {
+      "id": 4,
+      "title": "Prigra",
+      "images": [   
+        "/assets/image/prigra/prigra.png",
+        "/assets/image/prigra/Choose Role.svg",
+        "/assets/image/prigra/prigra_frame_1.svg",
+        "/assets/image/prigra/prigra_frame_2.svg",
+        "/assets/image/prigra/prigra_frame3.svg",
+        "/assets/image/prigra/prigra_frame4.svg"
+        
+      ],
+      "description": "Plateforme web pour la gestion des projets de fin d'étude en Algérie.",
+      "technologies": ["Django", "ReactJS"],
+      "achievements": [
+        "Conception et développement des fonctionnalités principales",
+        "Intégration du front-end avec le back-end",
+        "Utilisation des pratiques de la méthodologie Agile Scrum"
+      ]
+    }
+
+ 
+,
+{
       "id": 5,
+      "title": "JARVIS",
+      "images": [
+        "/assets/image/jarvis/jarvis_1.svg",
+        "/assets/image/jarvis/jarvis_fram3.svg",
+        "/assets/image/jarvis/jarvis_frame4.svg",
+        "/assets/image/jarvis/jarvis_frame5.svg",
+        "/assets/image/jarvis/jarvis_frame6.svg"
+      ],
+      "description": "Application mobile de gestion de projets basée sur l'IA.",
+      "technologies": ["Flutter", "NodeJS", "Figma"],
+      "achievements": [
+        "2ème place lors du Hackathon national de 48 heures GDG Devfest",
+        "Développement d'une application mobile basée sur l'IA"
+      ]
+}
+     
+    
+     
+    ,
+        {
+      "id": 6,
       "title": "Comiteplus",
       "images": [
           "/assets/image/comiteplus/comite1.png"
@@ -114,7 +153,7 @@ export const portfolioData: PortfolioData = {
       ]
     },
     {
-      "id": 6,
+      "id": 7,
       "title": "Esiway",
       "images": [
         "/assets/image/esiway/es01.png",
@@ -142,7 +181,7 @@ export const portfolioData: PortfolioData = {
       ]
     },
     {
-      "id": 7,
+      "id": 8,
       "title": "Festival Littéraire International",
       "images": [
         "/assets/image/festival/ff10.png",
@@ -193,12 +232,20 @@ export const portfolioData: PortfolioData = {
   ],
   "experience": [
     {
-      "position": "Développeur Full Stack - Alternance",
-      "company": "Afludia",
-      "period": "2024 - Présent",
-      "description": "Développement d'applications web en utilisant .NET, Blazor et SQL Server.",
-      "achievements": ["Travail sur plusieurs projets en utilisant .NET et Blazor", "Gestion de bases de données avec SQL Server", "Collaboration en équipe"]
-    },
+  "position": "Développeur Full Stack - Alternance",
+  "company": "Afludia",
+  "period": "2024 - Présent",
+  "description": "Conception et évolution d’applications web métier en environnement .NET (Blazor, SQL Server), avec un focus sur la performance, la maintenabilité et la scalabilité.",
+  "achievements": [
+    "Refonte et migration d’applications internes vers une architecture plus propre, modulaire et scalable (amélioration de la maintenabilité et des performances)",
+    "Développement et évolution de fonctionnalités critiques sur un ERP interne utilisé en production",
+    "Optimisation et debugging d’applications existantes (correction de bugs, amélioration des performances et de la fiabilité)",
+    "Conception et développement d’interfaces web modernes avec Blazor et MudBlazor",
+    "Contribution à plusieurs projets full-stack en environnement .NET (API, UI, base de données SQL Server)",
+    "Collaboration en équipe Agile (échanges techniques, revue de code, amélioration continue)"
+  ]
+},
+
     {
       "position": "Développeur Full Stack - Stage",
       "company": "Solutions Développement Informatique",
