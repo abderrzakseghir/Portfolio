@@ -81,14 +81,15 @@ export const Resume: React.FC<ResumeProps> = ({ data }) => {
           {/* SIDEBAR (32%) */}
           <aside className="resume-sidebar w-[32%] bg-slate-900 text-white p-4 md:p-5 print:w-[32%] print:p-4">
             {/* QR Code Section */}
-            <div className="flex justify-center mb-3">
-              <div className="bg-white p-1.5 rounded-lg">
+            <div className="flex flex-col items-center mb-2">
+              <a href="https://seghir-portfolio.vercel.app/" target="_blank" rel="noopener noreferrer" className="bg-white p-1.5 rounded-lg block hover:opacity-80 transition-opacity">
                 <img 
-                  src={`https://api.qrserver.com/v1/create-qr-code/?size=60x60&data=https://seghir-portfolio.vercel.app&bgcolor=ffffff&color=0f172a`}
+                  src={`https://api.qrserver.com/v1/create-qr-code/?size=52x52&data=https://seghir-portfolio.vercel.app&bgcolor=ffffff&color=0f172a`}
                   alt="QR Code Portfolio"
-                  className="w-[50px] h-[50px]"
+                  className="w-[44px] h-[44px]"
                 />
-              </div>
+              </a>
+              <a href="https://seghir-portfolio.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-primary-400 transition-colors mt-1" style={{ fontSize: '6.5px', letterSpacing: '0.01em' }}>seghir-portfolio.vercel.app</a>
             </div>
 
             {/* Photo and Name */}
@@ -394,14 +395,15 @@ export const Resume: React.FC<ResumeProps> = ({ data }) => {
                 {/* SIDEBAR (32%) */}
                 <aside className="w-[32%] bg-slate-900 text-white p-4">
                   {/* QR Code Section */}
-                  <div className="flex justify-center mb-3">
-                    <div className="bg-white p-1.5 rounded-lg">
+                  <div className="flex flex-col items-center mb-2">
+                    <a href="https://seghir-portfolio.vercel.app/" target="_blank" rel="noopener noreferrer" className="bg-white p-1.5 rounded-lg block hover:opacity-80 transition-opacity">
                       <img 
-                        src={`https://api.qrserver.com/v1/create-qr-code/?size=60x60&data=https://seghir-portfolio.vercel.app&bgcolor=ffffff&color=0f172a`}
+                        src={`https://api.qrserver.com/v1/create-qr-code/?size=52x52&data=https://seghir-portfolio.vercel.app&bgcolor=ffffff&color=0f172a`}
                         alt="QR Code Portfolio"
-                        className="w-[50px] h-[50px]"
+                        className="w-[44px] h-[44px]"
                       />
-                    </div>
+                    </a>
+                    <a href="https://seghir-portfolio.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-primary-400 transition-colors mt-1" style={{ fontSize: '6.5px', letterSpacing: '0.01em' }}>seghir-portfolio.vercel.app</a>
                   </div>
 
                   {/* Photo and Name */}
