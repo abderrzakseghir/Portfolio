@@ -154,34 +154,6 @@ export const portfolioData: PortfolioData = {
     },
     {
       "id": 7,
-      "title": "Esiway",
-      "images": [
-        "/assets/image/esiway/es01.png",
-        "/assets/image/esiway/es04.png",
-        "/assets/image/esiway/es07.png",
-        "/assets/image/esiway/es08.png",
-        "/assets/image/esiway/es09.png",
-        "/assets/image/esiway/es10.png",
-        "/assets/image/esiway/es13.png",
-        "/assets/image/esiway/es14.png",
-        "/assets/image/esiway/es21.jpg",
-        "/assets/image/esiway/svg/w1.svg",
-        "/assets/image/esiway/svg/w2.svg",
-        "/assets/image/esiway/svg/w3.svg",
-        "/assets/image/esiway/svg/w4.svg",
-        "/assets/image/esiway/svg/w5.svg"
-      ],
-      "description": "Application mobile Flutter pour simplifier les tâches administratives scolaires. Notre objectif : rationaliser les processus et créer une expérience conviviale. Développée en utilisant les principes de Flutter Clean Architecture.",
-      "technologies": ["Flutter", "Dart", "Figma" ,"Clean Architecture", "Mobile Application"],
-      "achievements": [
-        "Développement d'une application mobile épurée et intuitive",
-        "Implémentation de l'architecture Clean Architecture de Flutter",
-        "Simplification des processus administratifs pour les étudiants",
-        "Interface utilisateur fluide et performante"
-      ]
-    },
-    {
-      "id": 8,
       "title": "Festival Littéraire International",
       "images": [
         "/assets/image/festival/ff10.png",
