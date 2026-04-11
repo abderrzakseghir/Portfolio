@@ -216,16 +216,9 @@ export const portfolioData: PortfolioData = {
     {
       "position": "Développeur Full Stack - Alternance",
       "company": "Afludia - Maxéville",
-      "period": "Septembre 2024 - Présent",
-      "description": "Conception et évolution d’applications web métier en environnement .NET (Blazor, SQL Server), avec un focus sur la performance, la maintenabilité et la scalabilité.",
-      "achievements": [
-        "Refonte et migration d’applications internes vers une architecture plus propre, modulaire et scalable (amélioration de la maintenabilité et des performances)",
-        "Développement et évolution de fonctionnalités critiques sur un ERP interne utilisé en production",
-        "Optimisation et debugging d’applications existantes (correction de bugs, amélioration des performances et de la fiabilité)",
-        "Conception et développement d’interfaces web modernes avec Blazor et MudBlazor",
-        "Contribution à plusieurs projets full-stack en environnement .NET (API, UI, base de données SQL Server)",
-        "Collaboration en équipe Agile (échanges techniques, revue de code, amélioration continue)"
-      ]
+      "period": "Septembre 2024 - Septembre 2026",
+      "description": "Conception et évolution d’applications web métier en environnement .NET (Blazor, SQL Server), avec un focus sur la performance et la maintenabilité.",
+      "achievements": ["Refonte et migration d’applications internes vers une architecture plus propre et modulaire (amélioration de la maintenabilité et des performances)", "Développement et évolution de fonctionnalités critiques sur les sites utilisés par les clients", "Optimisation et debugging d’applications existantes (correction de bugs, amélioration des performances et de la fiabilité)", "Conception et développement d’interfaces web modernes avec Blazor et MudBlazor", "Contribution au projets full-stack en environnement .NET (API, UI, base de données SQL Server)", "Collaboration en équipe Agile (échanges techniques, revue de code, amélioration continue)"]
     },
     {
       "position": "Développeur Full Stack - Stage",

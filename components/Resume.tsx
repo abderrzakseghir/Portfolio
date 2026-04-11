@@ -13,8 +13,8 @@ interface ResumeProps {
 export const Resume: React.FC<ResumeProps> = ({ data }) => {
   const handleDownload = () => {
     const link = document.createElement('a');
-    link.href = "/resume.pdf";
-    link.download = "CV_Abderrazak_Seghir_Developpeur_Full_Stack.pdf";
+    link.href = '/resume.pdf';
+    link.download = 'CV_Abderrazak_Seghir_Developpeur_Full_Stack.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
