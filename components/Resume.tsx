@@ -67,18 +67,21 @@ export const Resume: React.FC<ResumeProps> = ({ data }) => {
         >
           
           {/* SIDEBAR */}
-          <aside className="w-[32%] bg-[#111827] text-white pt-5 pb-6 px-6 print:w-[32%] flex flex-col justify-between">
+          <aside 
+            className="w-[32%] bg-primary-100 text-slate-900 pt-5 pb-6 px-6 print:w-[32%] flex flex-col justify-between border-r border-primary-200"
+            style={{ WebkitPrintColorAdjust: 'exact', printColorAdjust: 'exact' }}
+          >
             <div>
               {/* QR Code Section -> Made Clickable */}
               <div className="flex flex-col items-center mb-4">
-                <a href="https://seghir-portfolio.vercel.app" target="_blank" rel="noopener noreferrer" className="bg-white p-2 rounded-xl mb-2 hover:opacity-90 transition-opacity block cursor-pointer">
+                <a href="https://seghir-portfolio.vercel.app" target="_blank" rel="noopener noreferrer" className="bg-white p-2 rounded-xl mb-2 hover:shadow-md transition-shadow block cursor-pointer border border-slate-200">
                   <img 
-                    src={`https://api.qrserver.com/v1/create-qr-code/?size=55x55&data=https://seghir-portfolio.vercel.app&bgcolor=ffffff&color=111827`}
+                    src={`https://api.qrserver.com/v1/create-qr-code/?size=55x55&data=https://seghir-portfolio.vercel.app&bgcolor=ffffff&color=0f172a`}
                     alt="QR Code Portfolio"
                     className="w-[55px] h-[55px]"
                   />
                 </a>
-                <a href="https://seghir-portfolio.vercel.app" target="_blank" rel="noopener noreferrer" className="text-[10px] text-slate-300 hover:text-white font-medium tracking-wide">
+                <a href="https://seghir-portfolio.vercel.app" target="_blank" rel="noopener noreferrer" className="text-[10px] text-slate-600 hover:text-slate-900 font-medium tracking-wide">
                   seghir-portfolio.vercel.app
                 </a>
               </div>
@@ -89,37 +92,37 @@ export const Resume: React.FC<ResumeProps> = ({ data }) => {
                   <img 
                     src={data.personal.avatar} 
                     alt={data.personal.name} 
-                    className="relative w-full h-full object-cover rounded-full border-[3px] border-slate-600 shadow-lg"
+                    className="relative w-full h-full object-cover rounded-full"
                   />
                 </div>
-                <h1 className="text-[22px] font-extrabold tracking-tight leading-tight text-white mb-1">Abderrazak Seghir</h1>
-                <p className="text-primary-400 font-semibold text-[13px] uppercase tracking-widest mt-1">Développeur Full Stack</p>
+                <h1 className="text-[22px] font-extrabold tracking-tight leading-tight text-slate-900 mb-1">Abderrazak Seghir</h1>
+                <p className="text-primary-600 font-semibold text-[13px] uppercase tracking-widest mt-1">Développeur Full Stack</p>
               </div>
 
               <div className="space-y-6">
                 {/* Contact */}
                 <section>
-                  <h3 className="text-[12px] font-bold text-slate-400 uppercase tracking-widest mb-3 border-b border-slate-700 pb-1.5">Contact</h3>
+                  <h3 className="text-[12px] font-bold text-slate-500 uppercase tracking-widest mb-3 border-b border-slate-300 pb-1.5">Contact</h3>
                   <ul className="space-y-2">
-                    <li className="flex items-center text-[10.5px] text-slate-300 gap-2.5">
-                      <Mail size={13} className="text-primary-400 shrink-0" />
+                    <li className="flex items-center text-[10.5px] text-slate-700 gap-2.5">
+                      <Mail size={13} className="text-primary-600 shrink-0" />
                       <span className="truncate">{data.contact.email}</span>
                     </li>
-                    <li className="flex items-center text-[10.5px] text-slate-300 gap-2.5">
-                      <Phone size={13} className="text-primary-400 shrink-0" />
+                    <li className="flex items-center text-[10.5px] text-slate-700 gap-2.5">
+                      <Phone size={13} className="text-primary-600 shrink-0" />
                       {data.contact.phone}
                     </li>
-                    <li className="flex items-center text-[10.5px] text-slate-300 gap-2.5">
-                      <MapPin size={13} className="text-primary-400 shrink-0" />
+                    <li className="flex items-center text-[10.5px] text-slate-700 gap-2.5">
+                      <MapPin size={13} className="text-primary-600 shrink-0" />
                       Mobilité : Toute la France
                     </li>
-                    <li className="flex items-center text-[10.5px] text-slate-300 gap-2.5">
-                      <Car size={13} className="text-primary-400 shrink-0" />
+                    <li className="flex items-center text-[10.5px] text-slate-700 gap-2.5">
+                      <Car size={13} className="text-primary-600 shrink-0" />
                       Permis B + Véhicule
                     </li>
-                    <li className="flex items-center text-[10.5px] text-slate-300 gap-2.5">
-                      <Linkedin size={13} className="text-primary-400 shrink-0" />
-                      <a href="https://www.linkedin.com/in/seghir-abderrazak-248520229/" target="_blank" rel="noopener noreferrer" className="text-primary-300 font-medium hover:underline">
+                    <li className="flex items-center text-[10.5px] text-slate-700 gap-2.5">
+                      <Linkedin size={13} className="text-primary-600 shrink-0" />
+                      <a href="https://www.linkedin.com/in/seghir-abderrazak-248520229/" target="_blank" rel="noopener noreferrer" className="text-primary-700 font-medium hover:underline">
                         SEGHIR ABDERRAZAK
                       </a>
                     </li>
@@ -128,16 +131,16 @@ export const Resume: React.FC<ResumeProps> = ({ data }) => {
 
                 {/* Categorized Skills */}
                 <section>
-                  <h3 className="text-[12px] font-bold text-slate-400 uppercase tracking-widest mb-3 border-b border-slate-700 pb-1.5">Expertise</h3>
+                  <h3 className="text-[12px] font-bold text-slate-500 uppercase tracking-widest mb-3 border-b border-slate-300 pb-1.5">Expertise</h3>
                   <div className="space-y-3">
                     {data.skillCategories.slice(0, 4).map((cat, idx) => (
                       <div key={idx}>
-                        <p className="text-[10px] font-bold text-primary-300 mb-1.5 uppercase tracking-wide">
+                        <p className="text-[10px] font-bold text-primary-700 mb-1.5 uppercase tracking-wide">
                           {cat.category}
                         </p>
                         <div className="flex flex-wrap gap-1.5">
                           {cat.skills.slice(0, 5).map(s => (
-                            <span key={s} className="px-2 py-1 bg-slate-800 border border-slate-700 text-[9px] font-medium rounded-md text-slate-200">
+                            <span key={s} className="px-2 py-1 bg-white border border-slate-200 shadow-sm text-[9px] font-medium rounded-md text-slate-700">
                               {s}
                             </span>
                           ))}
@@ -150,14 +153,14 @@ export const Resume: React.FC<ResumeProps> = ({ data }) => {
                 {/* Certifications */}
                 {data.certifications && data.certifications.length > 0 && (
                 <section>
-                  <h3 className="text-[12px] font-bold text-slate-400 uppercase tracking-widest mb-2 border-b border-slate-700 pb-1.5">Certifications</h3>
+                  <h3 className="text-[12px] font-bold text-slate-500 uppercase tracking-widest mb-2 border-b border-slate-300 pb-1.5">Certifications</h3>
                   <div className="space-y-1.5">
                     {data.certifications.map((cert, i) => (
-                      <div key={i} className="p-2 bg-primary-900/40 border border-primary-500/20 rounded-lg">
-                        <p className="text-[10.5px] font-bold text-primary-300 flex items-center mb-0.5">
+                      <div key={i} className="p-2 bg-primary-50 border border-primary-200 rounded-lg">
+                        <p className="text-[10.5px] font-bold text-primary-700 flex items-center mb-0.5">
                           <Award size={12} className="mr-1.5 shrink-0" /> {cert.name}
                         </p>
-                        <p className="text-[9.5px] text-slate-400 mt-0.5 leading-snug">{cert.issuer}</p>
+                        <p className="text-[9.5px] text-slate-600 mt-0.5 leading-snug">{cert.issuer}</p>
                       </div>
                     ))}
                   </div>
@@ -166,13 +169,13 @@ export const Resume: React.FC<ResumeProps> = ({ data }) => {
 
                 {/* Centres d'intérêt */}
                 <section>
-                  <h3 className="text-[12px] font-bold text-slate-400 uppercase tracking-widest mb-2 border-b border-slate-700 pb-1.5">Centres d'intérêt</h3>
-                  <div className="flex flex-wrap gap-2 text-[10px] text-slate-300 font-medium">
-                    <span className="flex items-center gap-1"><Footprints size={11} className="text-primary-400" /> Course à pieds</span>
-                    <span className="text-slate-600">•</span>
-                    <span className="flex items-center gap-1"><Waves size={11} className="text-primary-400" /> Natation</span>
-                    <span className="text-slate-600">•</span>
-                    <span className="flex items-center gap-1"><Car size={11} className="text-primary-400" /> Mécanique</span>
+                  <h3 className="text-[12px] font-bold text-slate-500 uppercase tracking-widest mb-2 border-b border-slate-300 pb-1.5">Centres d'intérêt</h3>
+                  <div className="flex flex-wrap gap-2 text-[10px] text-slate-700 font-medium">
+                    <span className="flex items-center gap-1"><Footprints size={11} className="text-primary-600" /> Course à pieds</span>
+                    <span className="text-slate-300">•</span>
+                    <span className="flex items-center gap-1"><Waves size={11} className="text-primary-600" /> Natation</span>
+                    <span className="text-slate-300">•</span>
+                    <span className="flex items-center gap-1"><Car size={11} className="text-primary-600" /> Mécanique</span>
                   </div>
                 </section>
               </div>
