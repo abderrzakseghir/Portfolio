@@ -61,6 +61,17 @@ export interface Hobby {
   details?: string;
 }
 
+export interface Language {
+  name: string;
+  level: string;
+}
+
+export interface Certification {
+  name: string;
+  issuer: string;
+  date?: string;
+}
+
 export interface PortfolioData {
   personal: PersonalInfo;
   projects: Project[];
@@ -70,4 +81,6 @@ export interface PortfolioData {
   skills: string[];
   skillCategories: SkillCategory[];
   hobbies?: Hobby[];
+  languages?: Language[];
+  certifications?: Certification[];
 }

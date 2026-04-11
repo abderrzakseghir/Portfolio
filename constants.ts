@@ -6,8 +6,8 @@ export const portfolioData: PortfolioData = {
     "title": "Développeur Full Stack",
     "status": "Étudiant en Master 2 MIAGE-SID",
     "objective": "Recherche un poste en CDI pour mettre en valeur mes compétences et apprendre de nouvelles technologies",
-    "description": "Développeur Full Stack avec des compétences en .NET, Blazor, et mobile Flutter. Actuellement en dernière année de Master 2 MIAGE spécialité SID, je recherche un poste en CDI pour appliquer mes compétences et continuer à apprendre. J'ai une expérience en gestion de projets, et je prépare le certificat AWS Certified Cloud Practitioner (CLF-C02)",
-    "avatar": "/assets/image/avatar.jpg"
+    "description": "Actuellement en dernière année de Master 2 MIAGE spécialité SID, je recherche un poste en CDI pour appliquer mes compétences et continuer à apprendre. J'ai une expérience en gestion de projets, et je prépare le certificat AWS Certified Cloud Practitioner (CLF-C02)",
+    "avatar": "/assets/image/avatar.png"
   },
   "projects": [
 {
@@ -200,37 +200,46 @@ export const portfolioData: PortfolioData = {
           "description": "Formation intensive en Mathématiques, Algorithmique, Électronique." 
         }
       ]
+    },
+    {
+      "school": "Lycée",
+      "degrees": [
+        {
+          "degree": "Baccalauréat Série Mathématiques - Algérie",
+          "period": "2020",
+          "description": "Moyenne : 15.88 / 20"
+        }
+      ]
     }
   ],
   "experience": [
     {
-  "position": "Développeur Full Stack - Alternance",
-  "company": "Afludia",
-  "period": "2024 - Présent",
-  "description": "Conception et évolution d’applications web métier en environnement .NET (Blazor, SQL Server), avec un focus sur la performance, la maintenabilité et la scalabilité.",
-  "achievements": [
-    "Refonte et migration d’applications internes vers une architecture plus propre, modulaire et scalable (amélioration de la maintenabilité et des performances)",
-    "Développement et évolution de fonctionnalités critiques sur un ERP interne utilisé en production",
-    "Optimisation et debugging d’applications existantes (correction de bugs, amélioration des performances et de la fiabilité)",
-    "Conception et développement d’interfaces web modernes avec Blazor et MudBlazor",
-    "Contribution à plusieurs projets full-stack en environnement .NET (API, UI, base de données SQL Server)",
-    "Collaboration en équipe Agile (échanges techniques, revue de code, amélioration continue)"
-  ]
-},
-
-    {
-      "position": "Développeur Full Stack - Stage",
-      "company": "Solutions Développement Informatique",
-      "period": "Avril 2024 - Juin 2024",
-      "description": "Développement de la partie front-end et back-end d'une application web.",
-      "achievements": ["Développement complet de l'application web", "Intégration du site web dans une application mobile", "Réalisation des tests unitaires"]
+      "position": "Développeur Full Stack - Alternance",
+      "company": "Afludia - Maxéville",
+      "period": "Septembre 2024 - Présent",
+      "description": "Conception et évolution d’applications web métier en environnement .NET (Blazor, SQL Server), avec un focus sur la performance, la maintenabilité et la scalabilité.",
+      "achievements": [
+        "Refonte et migration d’applications internes vers une architecture plus propre, modulaire et scalable (amélioration de la maintenabilité et des performances)",
+        "Développement et évolution de fonctionnalités critiques sur un ERP interne utilisé en production",
+        "Optimisation et debugging d’applications existantes (correction de bugs, amélioration des performances et de la fiabilité)",
+        "Conception et développement d’interfaces web modernes avec Blazor et MudBlazor",
+        "Contribution à plusieurs projets full-stack en environnement .NET (API, UI, base de données SQL Server)",
+        "Collaboration en équipe Agile (échanges techniques, revue de code, amélioration continue)"
+      ]
     },
     {
-      "position": "Équipier Polyvalent",
-      "company": "McDonald's Nancy",
+      "position": "Développeur Full Stack - Stage",
+      "company": "Solutions Développement Informatique - La Rochelle",
+      "period": "Avril 2024 - Juin 2024",
+      "description": "",
+      "achievements": [ "Intégration d'un site web dans une application mobile"]
+    },
+    {
+      "position": "Équipier Polyvalent (Job étudiant)",
+      "company": "McDonald's - Heillecourt",
       "period": "Février 2024 - Décembre 2025",
-      "description": "Travail en temps partiel aux côtés de mes études dans divers domaines (accueil, caisse, cuisine).",
-      "achievements": ["Service client et gestion des commandes", "Travail en équipe dans un environnement dynamique", "Gestion du temps entre études et travail"]
+      "description": "",
+      "achievements": []
     }
   ],
   "contact": {
@@ -372,7 +381,13 @@ export const portfolioData: PortfolioData = {
   "description": "Hackathon national de 24 heures organisé lors du GDG Devfest",
   "coverImage": "/assets/image/hobbies/devfest.png",
   "details": "Participation au GDG Devfest Hackathon à l’ESI Sidi Bel Abbès. En équipe, nous avons conçu, designé et développé en 24 heures une application mobile nommée JARVIS, basée sur l’IA et le NLP, visant à améliorer la productivité et la gestion de projets. Le projet couvrait tout le cycle produit : idéation, prototypage et implémentation. Notre équipe a remporté la 2ᵉ place au niveau national. Cette expérience a renforcé mes compétences en travail d’équipe, innovation, développement sous pression et intégration de technologies d’IA."
-},
-   
+}
+  ],
+  "languages": [
+    { "name": "Français, Arabe", "level": "Bilingue Courant" },
+    { "name": "Anglais", "level": "Professionnel (B2)" }
+  ],
+  "certifications": [
+    { "name": "AWS Certified Cloud Practitioner (CLF-C02)", "issuer": "(En préparation)", "date": "En préparation" }
   ]
 };
