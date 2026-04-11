@@ -1,7 +1,7 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Download, Mail, Phone, MapPin, Linkedin, ExternalLink, Award, Sparkles, Briefcase, GraduationCap, Target, Car, Camera, Waves, Footprints, Clock, Eye, Globe } from 'lucide-react';
+import { Download, Mail, Phone, MapPin, Linkedin, ExternalLink, Award, Sparkles, Briefcase, GraduationCap, Target, Car, Camera, Waves, Footprints, Clock, Eye, X, ZoomIn, ZoomOut } from 'lucide-react';
 import { PortfolioData } from '../types';
 
 const MotionDiv = motion.div as any;
@@ -11,17 +11,21 @@ interface ResumeProps {
 }
 
 export const Resume: React.FC<ResumeProps> = ({ data }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [zoom, setZoom] = useState(0.5);
+
   const handleDownload = () => {
-    const link = document.createElement('a');
-    link.href = "/resume.pdf";
-    link.download = "CV_Abderrazak_Seghir_Developpeur_Full_Stack.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    // On desktop, use print
+    if (window.innerWidth >= 768) {
+      window.print();
+    } else {
+      // On mobile, open the modal for preview
+      setIsModalOpen(true);
+    }
   };
 
   return (
-    <section id="resume" className="py-20 bg-gradient-to-b from-white to-slate-50 font-sans">
+    <section id="resume" className="py-20 bg-gradient-to-b from-white to-slate-50">
       <div className="container mx-auto px-6">
         
         {/* Section Header */}
@@ -29,230 +33,239 @@ export const Resume: React.FC<ResumeProps> = ({ data }) => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12 print:hidden"
+          className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-extrabold text-slate-800 mb-4 tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
             Mon <span className="text-primary-600">CV</span>
           </h2>
-          <p className="text-slate-600 max-w-2xl mx-auto mb-6 text-lg">
+          <p className="text-slate-600 max-w-2xl mx-auto mb-6">
             Un aperçu de mon parcours.
           </p>
           <button 
             onClick={handleDownload}
-            className="inline-flex items-center px-8 py-4 bg-primary-600 text-white rounded-xl hover:bg-primary-700 transition-all shadow-xl shadow-primary-500/25 hover:shadow-primary-500/40 font-medium"
+            className="inline-flex items-center px-8 py-4 bg-primary-600 text-white rounded-2xl hover:bg-primary-700 transition-all shadow-xl shadow-primary-500/25 hover:shadow-primary-500/40 font-medium animate-float"
           >
             <Download size={20} className="mr-3 hidden md:block" />
             <Eye size={20} className="mr-3 md:hidden" />
             <span className="hidden md:inline">Télécharger mon CV (PDF)</span>
             <span className="md:hidden">Voir mon CV</span>
           </button>
+          
+          <style>{`
+            @keyframes float {
+              0%, 100% {
+                transform: translateY(0px);
+                box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.4);
+              }
+              50% {
+                transform: translateY(-8px);
+                box-shadow: 0 18px 40px -10px rgba(99, 102, 241, 0.55);
+              }
+            }
+            .animate-float {
+              animation: float 3s ease-in-out infinite;
+              will-change: transform, box-shadow;
+            }
+          `}</style>
         </MotionDiv>
 
-        {/* NATIVE PDF VIEWER FOR DESKTOP */}
-        <div className="hidden md:block max-w-[1000px] mx-auto print:hidden h-[850px] shadow-2xl rounded-2xl overflow-hidden border border-slate-200">
-           <object 
-             data="/resume.pdf" 
-             type="application/pdf" 
-             className="w-full h-full"
-           >
-             <p className="p-4 text-center">Votre navigateur ne supporte pas la lecture de PDF. <a href="/resume.pdf" className="text-primary-600 underline font-semibold">Télécharger le PDF</a></p>
-           </object>
-        </div>
-
-        {/* HIDDEN HTML CV FOR PUPPETEER PRINTING ONLY */}
-        {/* CSS Reset inside cv-print-area to enforce typography */}
-        <div
+        {/* The Resume Layout - A4 Format Preview - Hidden on mobile */}
+        <MotionDiv
           id="cv-print-area"
-          className="hidden print:flex resume-container flex-col md:flex-row print:shadow-none print:ring-0 print:rounded-none print:max-w-none print:w-[210mm] print:h-[297mm] print:overflow-hidden bg-white text-slate-800"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="resume-container max-w-[210mm] mx-auto bg-white shadow-[0_25px_60px_-15px_rgba(0,0,0,0.3)] ring-1 ring-slate-200 rounded-2xl overflow-hidden hidden md:flex flex-col md:flex-row print:flex print:shadow-none print:ring-0 print:rounded-none print:max-w-none print:w-[210mm] print:h-[297mm] print:overflow-hidden"
         >
           
-          {/* SIDEBAR */}
-          <aside className="w-[32%] bg-[#111827] text-white pt-5 pb-6 px-6 print:w-[32%] flex flex-col justify-between">
-            <div>
-              {/* QR Code Section -> Made Clickable */}
-              <div className="flex flex-col items-center mb-4">
-                <a href="https://seghir-portfolio.vercel.app" target="_blank" rel="noopener noreferrer" className="bg-white p-2 rounded-xl mb-2 hover:opacity-90 transition-opacity block cursor-pointer">
-                  <img 
-                    src={`https://api.qrserver.com/v1/create-qr-code/?size=55x55&data=https://seghir-portfolio.vercel.app&bgcolor=ffffff&color=111827`}
-                    alt="QR Code Portfolio"
-                    className="w-[55px] h-[55px]"
-                  />
-                </a>
-                <a href="https://seghir-portfolio.vercel.app" target="_blank" rel="noopener noreferrer" className="text-[10px] text-slate-300 hover:text-white font-medium tracking-wide">
-                  seghir-portfolio.vercel.app
-                </a>
-              </div>
-
-              {/* Photo and Name */}
-              <div className="text-center mb-6">
-                <div className="relative w-24 h-24 mx-auto mb-3">
-                  <img 
-                    src={data.personal.avatar} 
-                    alt={data.personal.name} 
-                    className="relative w-full h-full object-cover rounded-full border-[3px] border-slate-600 shadow-lg"
-                  />
-                </div>
-                <h1 className="text-[22px] font-extrabold tracking-tight leading-tight text-white mb-1">Abderrazak Seghir</h1>
-                <p className="text-primary-400 font-semibold text-[13px] uppercase tracking-widest mt-1">Développeur Full Stack</p>
-              </div>
-
-              <div className="space-y-6">
-                {/* Contact */}
-                <section>
-                  <h3 className="text-[12px] font-bold text-slate-400 uppercase tracking-widest mb-3 border-b border-slate-700 pb-1.5">Contact</h3>
-                  <ul className="space-y-2">
-                    <li className="flex items-center text-[10.5px] text-slate-300 gap-2.5">
-                      <Mail size={13} className="text-primary-400 shrink-0" />
-                      <span className="truncate">{data.contact.email}</span>
-                    </li>
-                    <li className="flex items-center text-[10.5px] text-slate-300 gap-2.5">
-                      <Phone size={13} className="text-primary-400 shrink-0" />
-                      {data.contact.phone}
-                    </li>
-                    <li className="flex items-center text-[10.5px] text-slate-300 gap-2.5">
-                      <MapPin size={13} className="text-primary-400 shrink-0" />
-                      Mobilité : Toute la France
-                    </li>
-                    <li className="flex items-center text-[10.5px] text-slate-300 gap-2.5">
-                      <Car size={13} className="text-primary-400 shrink-0" />
-                      Permis B + Véhicule
-                    </li>
-                    <li className="flex items-center text-[10.5px] text-slate-300 gap-2.5">
-                      <Linkedin size={13} className="text-primary-400 shrink-0" />
-                      <a href="https://www.linkedin.com/in/seghir-abderrazak-248520229/" target="_blank" rel="noopener noreferrer" className="text-primary-300 font-medium hover:underline">
-                        SEGHIR ABDERRAZAK
-                      </a>
-                    </li>
-                  </ul>
-                </section>
-
-                {/* Categorized Skills */}
-                <section>
-                  <h3 className="text-[12px] font-bold text-slate-400 uppercase tracking-widest mb-3 border-b border-slate-700 pb-1.5">Expertise</h3>
-                  <div className="space-y-3">
-                    {data.skillCategories.slice(0, 4).map((cat, idx) => (
-                      <div key={idx}>
-                        <p className="text-[10px] font-bold text-primary-300 mb-1.5 uppercase tracking-wide">
-                          {cat.category}
-                        </p>
-                        <div className="flex flex-wrap gap-1.5">
-                          {cat.skills.slice(0, 5).map(s => (
-                            <span key={s} className="px-2 py-1 bg-slate-800 border border-slate-700 text-[9px] font-medium rounded-md text-slate-200">
-                              {s}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </section>
-
-                {/* Certifications */}
-                {data.certifications && data.certifications.length > 0 && (
-                <section>
-                  <h3 className="text-[12px] font-bold text-slate-400 uppercase tracking-widest mb-2 border-b border-slate-700 pb-1.5">Certifications</h3>
-                  <div className="space-y-1.5">
-                    {data.certifications.map((cert, i) => (
-                      <div key={i} className="p-2 bg-primary-900/40 border border-primary-500/20 rounded-lg">
-                        <p className="text-[10.5px] font-bold text-primary-300 flex items-center mb-0.5">
-                          <Award size={12} className="mr-1.5 shrink-0" /> {cert.name}
-                        </p>
-                        <p className="text-[9.5px] text-slate-400 mt-0.5 leading-snug">{cert.issuer}</p>
-                      </div>
-                    ))}
-                  </div>
-                </section>
-                )}
-
-                {/* Centres d'intérêt */}
-                <section>
-                  <h3 className="text-[12px] font-bold text-slate-400 uppercase tracking-widest mb-2 border-b border-slate-700 pb-1.5">Centres d'intérêt</h3>
-                  <div className="flex flex-wrap gap-2 text-[10px] text-slate-300 font-medium">
-                    <span className="flex items-center gap-1"><Footprints size={11} className="text-primary-400" /> Course à pieds</span>
-                    <span className="text-slate-600">•</span>
-                    <span className="flex items-center gap-1"><Waves size={11} className="text-primary-400" /> Natation</span>
-                    <span className="text-slate-600">•</span>
-                    <span className="flex items-center gap-1"><Car size={11} className="text-primary-400" /> Mécanique</span>
-                  </div>
-                </section>
-              </div>
+          {/* SIDEBAR (32%) */}
+          <aside className="resume-sidebar w-[32%] bg-slate-900 text-white p-4 md:p-5 print:w-[32%] print:p-4">
+            {/* QR Code Section */}
+            <div className="flex flex-col items-center mb-2">
+              <a href="https://seghir-portfolio.vercel.app/" target="_blank" rel="noopener noreferrer" className="bg-white p-1.5 rounded-lg block hover:opacity-80 transition-opacity">
+                <img 
+                  src={`https://api.qrserver.com/v1/create-qr-code/?size=52x52&data=https://seghir-portfolio.vercel.app&bgcolor=ffffff&color=0f172a`}
+                  alt="QR Code Portfolio"
+                  className="w-[44px] h-[44px]"
+                />
+              </a>
+              <a href="https://seghir-portfolio.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-primary-400 transition-colors mt-1" style={{ fontSize: '6.5px', letterSpacing: '0.01em' }}>seghir-portfolio.vercel.app</a>
             </div>
-            
-            {/* Bottom Footer block in sidebar if needed, currently empty */}
-            <div></div>
+
+            {/* Photo and Name */}
+            <div className="text-center mb-4">
+              <div className="relative w-16 h-16 mx-auto mb-2">
+                <img 
+                  src={data.personal.avatar} 
+                  alt={data.personal.name} 
+                  className="relative w-full h-full object-cover rounded-full border-2 border-slate-700 shadow-lg"
+                />
+              </div>
+              <h1 className="text-base font-bold tracking-tight leading-tight">Abderrazak Seghir</h1>
+              <p className="text-primary-400 font-semibold text-[10px] uppercase tracking-wider mt-0.5">Développeur Full Stack</p>
+            </div>
+
+            <div className="space-y-4">
+              {/* Contact */}
+              <section>
+                <h3 className="text-[9px] font-black text-slate-500 uppercase tracking-[0.15em] mb-1.5 border-b border-slate-800 pb-1">Contact</h3>
+                <ul className="space-y-1">
+                  <li className="flex items-center text-[9px] text-slate-300 gap-1.5">
+                    <Mail size={10} className="text-primary-500 shrink-0" />
+                    <span className="truncate">{data.contact.email}</span>
+                  </li>
+                  <li className="flex items-center text-[9px] text-slate-300 gap-1.5">
+                    <Phone size={10} className="text-primary-500 shrink-0" />
+                    {data.contact.phone}
+                  </li>
+                  <li className="flex items-center text-[9px] text-slate-300 gap-1.5">
+                    <MapPin size={10} className="text-primary-500 shrink-0" />
+                    Mobilité : Toute la France
+                  </li>
+                  <li className="flex items-center text-[9px] text-slate-300 gap-1.5">
+                    <Car size={10} className="text-primary-500 shrink-0" />
+                    Véhiculé
+                  </li>
+                  <li className="flex items-center text-[9px] text-slate-300 gap-1.5">
+                    <Linkedin size={10} className="text-primary-500 shrink-0" />
+                    <a href="https://www.linkedin.com/in/seghir-abderrazak-248520229/" target="_blank" rel="noopener noreferrer" className="text-primary-400 hover:text-primary-300 hover:underline">
+                      SEGHIR ABDERRAZAK
+                    </a>
+                  </li>
+                </ul>
+              </section>
+
+              {/* Categorized Skills - No icons */}
+              <section>
+                <h3 className="text-[9px] font-black text-slate-500 uppercase tracking-[0.15em] mb-2 border-b border-slate-800 pb-1">Expertise</h3>
+                <div className="space-y-2">
+                  {data.skillCategories.slice(0, 4).map((cat, idx) => (
+                    <div key={idx}>
+                      <p className="text-[8px] font-bold text-primary-400 mb-1 uppercase">
+                        {cat.category}
+                      </p>
+                      <div className="flex flex-wrap gap-0.5">
+                        {cat.skills.slice(0, 5).map(s => (
+                          <span key={s} className="px-1 py-0.5 bg-slate-800/50 border border-slate-700 text-[7px] rounded text-slate-300">
+                            {s}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              {/* Certifications */}
+              <section>
+                <h3 className="text-[9px] font-black text-slate-500 uppercase tracking-[0.15em] mb-1.5 border-b border-slate-800 pb-1">Certifications</h3>
+                <div className="p-1.5 bg-primary-500/10 border border-primary-500/20 rounded">
+                  <p className="text-[9px] font-bold text-primary-400 flex items-center mb-0.5">
+                    <Award size={10} className="mr-1" /> AWS Certified
+                  </p>
+                  <p className="text-[8px] text-slate-300">Cloud Practitioner (CLF-C02)</p>
+                  <p className="text-[7px] text-slate-400 flex items-center mt-1">
+                    <Clock size={8} className="mr-1 text-primary-500" /> En préparation
+                  </p>
+                </div>
+              </section>
+
+              {/* Centre d'intérêt */}
+              <section>
+                <h3 className="text-[9px] font-black text-slate-500 uppercase tracking-[0.15em] mb-1.5 border-b border-slate-800 pb-1">Centre d'intérêt</h3>
+                <div className="flex flex-wrap gap-1.5">
+                  <span className="flex items-center gap-1 px-1.5 py-0.5 bg-slate-800/50 border border-slate-700 text-[8px] rounded text-slate-300">
+                    <Footprints size={9} className="text-primary-500" /> Course à pied
+                  </span>
+                  <span className="flex items-center gap-1 px-1.5 py-0.5 bg-slate-800/50 border border-slate-700 text-[8px] rounded text-slate-300">
+                    <Camera size={9} className="text-primary-500" /> Photographie
+                  </span>
+                  <span className="flex items-center gap-1 px-1.5 py-0.5 bg-slate-800/50 border border-slate-700 text-[8px] rounded text-slate-300">
+                    <Waves size={9} className="text-primary-500" /> Piscine
+                  </span>
+                </div>
+              </section>
+            </div>
           </aside>
 
           {/* MAIN CONTENT (68%) */}
-          <main className="w-[68%] pt-5 pb-6 px-6 overflow-hidden print:w-[68%]">
+          <main className="resume-main w-[68%] p-4 md:p-5 overflow-hidden print:w-[68%] print:p-4">
             
             {/* Recherche CDI Banner */}
-            <div className="mb-4 p-2 bg-primary-50/80 border border-primary-100 rounded-xl">
-              <p className="flex items-center justify-center text-[11px] font-bold text-primary-700 uppercase tracking-widest">
+            <div className="mb-3 p-2 bg-primary-50 border border-primary-200 rounded-lg">
+              <p className="flex items-center text-[11px] font-bold text-primary-700 uppercase tracking-wide">
                 <Target size={14} className="mr-2 text-primary-600" />
                 Recherche de CDI - Septembre 2026
               </p>
             </div>
 
-            {/* ORDER: Profil -> Formation -> Experiences -> Projets -> Langues */}
-
-            {/* 1. Profil / Summary */}
-            <section className="mb-4">
-              <h3 className="flex items-center text-[13px] font-bold text-primary-600 mb-1.5 uppercase tracking-widest">
-                <Sparkles size={14} className="mr-2" />
+            {/* Header / Summary */}
+            <header className="mb-3">
+              <h3 className="flex items-center text-xs font-bold text-primary-600 mb-1.5 uppercase tracking-tight">
+                <Sparkles size={12} className="text-primary-600 mr-1.5" />
                 Profil & Objectif
               </h3>
-              <p className="text-[#333333] leading-[1.6] text-[10.5px] border-l-[3px] border-primary-300 pl-3 py-1 font-medium">
-                "Actuellement en dernière année de Master 2 MIAGE spécialité SID, je recherche un poste en CDI pour appliquer mes compétences et continuer à apprendre. J'ai une expérience en gestion de projets, et je prépare le certificat AWS Certified Cloud Practitioner (CLF-C02)."
+              <p className="text-slate-600 leading-snug text-[9px] italic border-l-2 border-primary-500 pl-2 py-0.5">
+                "{data.personal.description}"
               </p>
-            </section>
+            </header>
 
-            {/* 2. Formation Section */}
-            <section className="mb-4">
-              <h3 className="flex items-center text-[13px] font-bold text-primary-600 mb-2 uppercase tracking-widest">
-                <GraduationCap size={14} className="mr-2" />
-                Formation
+            {/* Featured Projects - List format like image */}
+            <section className="mb-3">
+              <h3 className="flex items-center text-xs font-bold text-primary-600 mb-2 uppercase tracking-tight">
+                <ExternalLink size={12} className="text-primary-600 mr-1.5" />
+                Projets & Réalisations
               </h3>
-              <div className="space-y-3.5 pl-1.5">
-                {data.education.map((edu, idx) => (
-                  <div key={idx} className={`relative pl-4 border-l-2 border-primary-100 ${idx > 0 ? "mt-2" : ""}`}>
-                    <div className="absolute -left-[7px] top-1 w-3 h-3 bg-primary-500 rounded-full ring-4 ring-white"></div>
-                    <h4 className="text-[11.5px] font-bold text-[#1f2937] uppercase tracking-wide mb-1">{edu.school}</h4>
-                    {edu.degrees.map((deg, i) => (
-                      <div key={i} className={`flex justify-between items-baseline ${i === 0 ? "mt-1" : "mt-0.5"}`}>
-                        <div className="w-[80%] pr-2">
-                          <p className="text-[10.5px] font-medium text-[#333333] leading-snug">{deg.degree}</p>
-                          {deg.description && <p className="text-[9.5px] text-[#6b7280] mt-0.5">{deg.description}</p>}
-                        </div>
-                        <span className="text-[9.5px] font-medium text-[#6b7280] shrink-0 text-right">{deg.period}</span>
+              <div className="space-y-2">
+                {data.projects.slice(0, 4).map((project, idx) => (
+                  <div key={idx} className="pb-2 border-b border-slate-100 last:border-0 last:pb-0">
+                    <div className="flex justify-between items-start mb-1">
+                      <h4 className="font-bold text-slate-800 text-[9px]">
+                        {project.title}
+                      </h4>
+                      <div className="flex flex-wrap gap-1 justify-end">
+                        {project.technologies.slice(0, 4).map(t => (
+                          <span key={t} className="text-[7px] font-medium text-primary-600">
+                            {t}
+                          </span>
+                        ))}
                       </div>
-                    ))}
+                    </div>
+                    <ul className="space-y-0.5">
+                      {project.achievements.slice(0, 3).map((ach, i) => (
+                        <li key={i} className="text-[8px] text-slate-600 flex items-start">
+                          <span className="text-primary-500 mr-1.5 font-bold">•</span>
+                          <span>{ach}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 ))}
               </div>
             </section>
 
-            {/* 3. Experience */}
-            <section className="mb-4">
-              <h3 className="flex items-center text-[13px] font-bold text-primary-600 mb-2 uppercase tracking-widest">
-                <Briefcase size={14} className="mr-2" />
+            {/* Experience */}
+            <section className="mb-2">
+              <h3 className="flex items-center text-xs font-bold text-primary-600 mb-2 uppercase tracking-tight">
+                <Briefcase size={12} className="text-primary-600 mr-1.5" />
                 Expériences Professionnelles
               </h3>
-              <div className="space-y-4 pl-1.5">
-                {data.experience.slice(0, 3).map((exp, idx) => (
-                  <div key={idx} className="relative pl-4 border-l-2 border-primary-100">
-                    <div className="absolute -left-[7px] top-1 w-3 h-3 bg-primary-600 rounded-full ring-4 ring-white"></div>
+              <div className="space-y-2">
+                {data.experience.slice(0, 2).map((exp, idx) => (
+                  <div key={idx} className="relative pl-3 border-l-2 border-primary-200">
+                    <div className="absolute -left-[5px] top-1 w-2 h-2 bg-primary-500 rounded-full"></div>
                     <div className="flex justify-between items-baseline mb-0.5">
-                      <h4 className="font-bold text-[#1f2937] text-[12px]">{exp.position}</h4>
-                      <span className="text-[8.5px] font-bold text-primary-700 uppercase bg-primary-50 px-2 py-0.5 rounded-md min-w-max ml-3">{exp.period}</span>
+                      <h4 className="font-bold text-slate-800 text-[9px]">{exp.position}</h4>
+                      <span className="text-[7px] font-black text-primary-600 uppercase bg-primary-50 px-1 py-0.5 rounded">{exp.period}</span>
                     </div>
-                    <p className="text-[10.5px] font-bold text-[#6b7280] mb-1">{exp.company}</p>
-                    <p className="text-[10px] text-[#333333] leading-[1.6] mb-1.5">{exp.description}</p>
+                    <p className="text-[8px] font-semibold text-slate-500 mb-0.5">{exp.company}</p>
+                    <p className="text-[8px] text-slate-600 leading-tight">{exp.description}</p>
                     {exp.achievements && exp.achievements.length > 0 && (
-                      <ul className="space-y-0.5 mt-1">
+                      <ul className="mt-1 space-y-0.5">
                         {exp.achievements.slice(0, 2).map((ach, i) => (
-                          <li key={i} className="text-[10px] text-[#4b5563] flex items-start leading-[1.5]">
-                            <span className="text-primary-500 mr-2 font-bold mt-0.5">•</span>
-                            <span>{ach}</span>
+                          <li key={i} className="text-[7px] text-slate-500 flex items-start">
+                            <span className="text-primary-500 mr-1">▸</span>
+                            {ach}
                           </li>
                         ))}
                       </ul>
@@ -262,62 +275,40 @@ export const Resume: React.FC<ResumeProps> = ({ data }) => {
               </div>
             </section>
 
-            {/* 4. Featured Projects */}
-            <section className="mb-4">
-              <h3 className="flex items-center text-[14px] font-bold text-primary-600 mb-2 uppercase tracking-widest">
-                <ExternalLink size={14} className="mr-2" />
-                Projets & Réalisations
+            {/* Formation Section - Compact */}
+            <section className="mt-3">
+              <h3 className="flex items-center text-xs font-bold text-primary-600 mb-2 uppercase tracking-tight">
+                <GraduationCap size={12} className="text-primary-600 mr-1.5" />
+                Formation
               </h3>
-              <div className="space-y-1.5 pl-1.5">
-                {data.projects.slice(0, 3).map((project, idx) => (
-                  <div key={idx} className="pb-1.5 border-b border-gray-100 last:border-0 last:pb-0">
-                    <div className="flex justify-between items-center mb-1">
-                      <h4 className="font-bold text-[#1f2937] text-[11px]">
-                        {project.title}
-                      </h4>
-                      <div className="flex flex-wrap gap-1 justify-end">
-                        {project.technologies.slice(0, 4).map(t => (
-                          <span key={t} className="text-[8px] font-bold text-primary-600 bg-primary-50/50 px-1.5 py-0.5 rounded">
-                            {t}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                     <ul className="space-y-0.5">
-                      {project.achievements.slice(0, 2).map((ach, i) => (
-                        <li key={i} className="text-[10px] text-[#4b5563] flex items-start leading-[1.5]">
-                          <span className="text-primary-400 mr-2 font-bold mt-[1px]">▹</span>
-                          <span className="line-clamp-1">{ach}</span>
-                        </li>
-                      ))}
-                    </ul>
+              <div className="space-y-2">
+                {/* IDMC */}
+                <div className="relative pl-3 border-l-2 border-primary-200">
+                  <div className="absolute -left-[5px] top-1 w-2 h-2 bg-primary-500 rounded-full"></div>
+                  <h4 className="text-[8px] font-bold text-slate-800 uppercase">Institut des Sciences du Digital, Management Cognition (IDMC) - Nancy</h4>
+                  <div className="flex justify-between items-baseline mt-0.5">
+                    <p className="text-[7px] text-slate-600">Master MIAGE - Systèmes d'Information Décisionnels</p>
+                    <span className="text-[6px] text-slate-400">2024-2026</span>
                   </div>
-                ))}
+                  <div className="flex justify-between items-baseline">
+                    <p className="text-[7px] text-slate-600">Licence MIAGE</p>
+                    <span className="text-[6px] text-slate-400">2023-2024</span>
+                  </div>
+                </div>
+                {/* ESI */}
+                <div className="relative pl-3 border-l-2 border-primary-200">
+                  <div className="absolute -left-[5px] top-1 w-2 h-2 bg-primary-500 rounded-full"></div>
+                  <h4 className="text-[8px] font-bold text-slate-800 uppercase">École Nationale Supérieure d'Informatique (ESI) - Algérie</h4>
+                  <div className="flex justify-between items-baseline mt-0.5">
+                    <p className="text-[7px] text-slate-600">Cycle Préparatoire Intégré</p>
+                    <span className="text-[6px] text-slate-400">2020-2022</span>
+                  </div>
+                </div>
               </div>
             </section>
-
-            {/* 5. Langues */}
-            {data.languages && data.languages.length > 0 && (
-            <section className="mt-auto">
-              <h3 className="flex items-center text-[13px] font-bold text-primary-600 mb-2 uppercase tracking-widest">
-                <Globe size={14} className="mr-2" />
-                Langues
-              </h3>
-              <div className="flex flex-wrap gap-6 bg-slate-50 p-2.5 rounded-xl border border-slate-100">
-                {data.languages.map((lang, i) => (
-                  <React.Fragment key={i}>
-                    <div className="flex flex-col">
-                      <span className="text-[11px] font-bold text-[#1f2937] mb-0.5">{lang.name}</span>
-                      <span className="text-[10px] font-medium text-[#6b7280]">{lang.level}</span>
-                    </div>
-                    {i < data.languages!.length - 1 && <div className="w-px bg-slate-200"></div>}
-                  </React.Fragment>
-                ))}
-              </div>
-            </section>
-            )}
           </main>
-        </div>
+
+        </MotionDiv>
 
         {/* Mobile Preview Card - Clickable */}
         <div className="md:hidden mt-8">
@@ -475,61 +466,285 @@ export const Resume: React.FC<ResumeProps> = ({ data }) => {
                               ))}
                             </div>
                           </div>
-=======
-              <div className="space-y-1.5 pl-1.5">
-                {data.projects.slice(0, 3).map((project, idx) => (
-                  <div key={idx} className="pb-1.5 border-b border-gray-100 last:border-0 last:pb-0">
-                    <div className="flex justify-between items-center mb-1">
-                      <h4 className="font-bold text-[#1f2937] text-[11px]">
-                        {project.title}
-                      </h4>
-                      <div className="flex flex-wrap gap-1 justify-end">
-                        {project.technologies.slice(0, 4).map(t => (
-                          <span key={t} className="text-[8px] font-bold text-primary-600 bg-primary-50/50 px-1.5 py-0.5 rounded">
-                            {t}
-                          </span>
->>>>>>> c7cff90 (Mise à jour du CV (optimisation A4, typages React, nom du fichier PDF, CV LaTeX ATS))
                         ))}
                       </div>
-                    </div>
-                     <ul className="space-y-0.5">
-                      {project.achievements.slice(0, 2).map((ach, i) => (
-                        <li key={i} className="text-[10px] text-[#4b5563] flex items-start leading-[1.5]">
-                          <span className="text-primary-400 mr-2 font-bold mt-[1px]">▹</span>
-                          <span className="line-clamp-1">{ach}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    </section>
+
+                    {/* Certifications */}
+                    <section>
+                      <h3 className="text-[9px] font-black text-slate-500 uppercase tracking-[0.15em] mb-1.5 border-b border-slate-800 pb-1">Certifications</h3>
+                      <div className="p-1.5 bg-primary-500/10 border border-primary-500/20 rounded">
+                        <p className="text-[9px] font-bold text-primary-400 flex items-center mb-0.5">
+                          <Award size={10} className="mr-1" /> AWS Certified
+                        </p>
+                        <p className="text-[8px] text-slate-300">Cloud Practitioner (CLF-C02)</p>
+                        <p className="text-[7px] text-slate-400 flex items-center mt-1">
+                          <Clock size={8} className="mr-1 text-primary-500" /> En préparation
+                        </p>
+                      </div>
+                    </section>
+
+                    {/* Centre d'intérêt */}
+                    <section>
+                      <h3 className="text-[9px] font-black text-slate-500 uppercase tracking-[0.15em] mb-1.5 border-b border-slate-800 pb-1">Centre d'intérêt</h3>
+                      <div className="flex flex-wrap gap-1.5">
+                        <span className="flex items-center gap-1 px-1.5 py-0.5 bg-slate-800/50 border border-slate-700 text-[8px] rounded text-slate-300">
+                          <Footprints size={9} className="text-primary-500" /> Course à pied
+                        </span>
+                        <span className="flex items-center gap-1 px-1.5 py-0.5 bg-slate-800/50 border border-slate-700 text-[8px] rounded text-slate-300">
+                          <Camera size={9} className="text-primary-500" /> Photographie
+                        </span>
+                        <span className="flex items-center gap-1 px-1.5 py-0.5 bg-slate-800/50 border border-slate-700 text-[8px] rounded text-slate-300">
+                          <Waves size={9} className="text-primary-500" /> Piscine
+                        </span>
+                      </div>
+                    </section>
                   </div>
-                ))}
-              </div>
-            </section>
+                </aside>
 
-            {/* 5. Langues */}
-            {data.languages && data.languages.length > 0 && (
-            <section className="mt-auto">
-              <h3 className="flex items-center text-[13px] font-bold text-primary-600 mb-2 uppercase tracking-widest">
-                <Globe size={14} className="mr-2" />
-                Langues
-              </h3>
-              <div className="flex flex-wrap gap-6 bg-slate-50 p-2.5 rounded-xl border border-slate-100">
-                {data.languages.map((lang, i) => (
-                  <React.Fragment key={i}>
-                    <div className="flex flex-col">
-                      <span className="text-[11px] font-bold text-[#1f2937] mb-0.5">{lang.name}</span>
-                      <span className="text-[10px] font-medium text-[#6b7280]">{lang.level}</span>
+                {/* MAIN CONTENT (68%) */}
+                <main className="w-[68%] p-4 overflow-hidden">
+                  {/* Recherche de CDI Banner */}
+                  <div className="mb-3 p-2 bg-primary-50 border border-primary-200 rounded-lg">
+                    <p className="flex items-center text-[11px] font-bold text-primary-700 uppercase tracking-wide">
+                      <Target size={14} className="mr-2 text-primary-600" />
+                      Recherche de CDI - Septembre 2026
+                    </p>
+                  </div>
+
+                  {/* Header / Summary */}
+                  <header className="mb-3">
+                    <h3 className="flex items-center text-xs font-bold text-primary-600 mb-1.5 uppercase tracking-tight">
+                      <Sparkles size={12} className="text-primary-600 mr-1.5" />
+                      Profil & Objectif
+                    </h3>
+                    <p className="text-slate-600 leading-snug text-[9px] italic border-l-2 border-primary-500 pl-2 py-0.5">
+                      "{data.personal.description}"
+                    </p>
+                  </header>
+
+                  {/* Featured Projects */}
+                  <section className="mb-3">
+                    <h3 className="flex items-center text-xs font-bold text-primary-600 mb-2 uppercase tracking-tight">
+                      <ExternalLink size={12} className="text-primary-600 mr-1.5" />
+                      Projets & Réalisations
+                    </h3>
+                    <div className="space-y-2">
+                      {data.projects.slice(0, 4).map((project, idx) => (
+                        <div key={idx} className="pb-2 border-b border-slate-100 last:border-0 last:pb-0">
+                          <div className="flex justify-between items-start mb-1">
+                            <h4 className="font-bold text-slate-800 text-[9px]">
+                              {project.title}
+                            </h4>
+                            <div className="flex flex-wrap gap-1 justify-end">
+                              {project.technologies.slice(0, 4).map(t => (
+                                <span key={t} className="text-[7px] font-medium text-primary-600">
+                                  {t}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                          <ul className="space-y-0.5">
+                            {project.achievements.slice(0, 3).map((ach, i) => (
+                              <li key={i} className="text-[8px] text-slate-600 flex items-start">
+                                <span className="text-primary-500 mr-1.5 font-bold">•</span>
+                                <span>{ach}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
                     </div>
-                    {i < data.languages!.length - 1 && <div className="w-px bg-slate-200"></div>}
-                  </React.Fragment>
-                ))}
+                  </section>
+
+                  {/* Experience */}
+                  <section className="mb-2">
+                    <h3 className="flex items-center text-xs font-bold text-primary-600 mb-2 uppercase tracking-tight">
+                      <Briefcase size={12} className="text-primary-600 mr-1.5" />
+                      Expériences Professionnelles
+                    </h3>
+                    <div className="space-y-2">
+                      {data.experience.slice(0, 2).map((exp, idx) => (
+                        <div key={idx} className="relative pl-3 border-l-2 border-primary-200">
+                          <div className="absolute -left-[5px] top-1 w-2 h-2 bg-primary-500 rounded-full"></div>
+                          <div className="flex justify-between items-baseline mb-0.5">
+                            <h4 className="font-bold text-slate-800 text-[9px]">{exp.position}</h4>
+                            <span className="text-[7px] font-black text-primary-600 uppercase bg-primary-50 px-1 py-0.5 rounded">{exp.period}</span>
+                          </div>
+                          <p className="text-[8px] font-semibold text-slate-500 mb-0.5">{exp.company}</p>
+                          <p className="text-[8px] text-slate-600 leading-tight">{exp.description}</p>
+                          {exp.achievements && exp.achievements.length > 0 && (
+                            <ul className="mt-1 space-y-0.5">
+                              {exp.achievements.slice(0, 2).map((ach, i) => (
+                                <li key={i} className="text-[7px] text-slate-500 flex items-start">
+                                  <span className="text-primary-500 mr-1">▸</span>
+                                  {ach}
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </section>
+
+                  {/* Formation Section */}
+                  <section className="mt-3">
+                    <h3 className="flex items-center text-xs font-bold text-primary-600 mb-2 uppercase tracking-tight">
+                      <GraduationCap size={12} className="text-primary-600 mr-1.5" />
+                      Formation
+                    </h3>
+                    <div className="space-y-2">
+                      {/* IDMC */}
+                      <div className="relative pl-3 border-l-2 border-primary-200">
+                        <div className="absolute -left-[5px] top-1 w-2 h-2 bg-primary-500 rounded-full"></div>
+                        <h4 className="text-[8px] font-bold text-slate-800 uppercase">Institut des Sciences du Digital, Management Cognition (IDMC) - Nancy</h4>
+                        <div className="flex justify-between items-baseline mt-0.5">
+                          <p className="text-[7px] text-slate-600">Master MIAGE - Systèmes d'Information Décisionnels</p>
+                          <span className="text-[6px] text-slate-400">2024-2026</span>
+                        </div>
+                        <div className="flex justify-between items-baseline">
+                          <p className="text-[7px] text-slate-600">Licence MIAGE</p>
+                          <span className="text-[6px] text-slate-400">2023-2024</span>
+                        </div>
+                      </div>
+                      {/* ESI */}
+                      <div className="relative pl-3 border-l-2 border-primary-200">
+                        <div className="absolute -left-[5px] top-1 w-2 h-2 bg-primary-500 rounded-full"></div>
+                        <h4 className="text-[8px] font-bold text-slate-800 uppercase">École Nationale Supérieure d'Informatique (ESI) - Algérie</h4>
+                        <div className="flex justify-between items-baseline mt-0.5">
+                          <p className="text-[7px] text-slate-600">Cycle Préparatoire Intégré</p>
+                          <span className="text-[6px] text-slate-400">2020-2022</span>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </main>
               </div>
-            </section>
-            )}
-
-          </main>
-
+            </div>
+          </div>
+          
+          {/* Modal Footer with Download hint */}
+          <div className="p-4 bg-slate-900 text-center">
+            <p className="text-slate-400 text-sm">
+              💡 Pour télécharger, faites une capture d'écran ou visitez depuis un ordinateur
+            </p>
+          </div>
         </div>
-      </div>
+      )}
+
+      <style>{`
+        .resume-container {
+          aspect-ratio: 210 / 297;
+        }
+        @media screen {
+          .resume-container {
+            max-height: 800px;
+          }
+        }
+        @media print {
+          @page {
+            size: A4 portrait;
+            margin: 0 !important;
+          }
+          
+          html, body {
+            width: 210mm !important;
+            height: 297mm !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            overflow: hidden !important;
+            background: white !important;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+            color-adjust: exact !important;
+          }
+          
+          /* Hide everything */
+          body * {
+            visibility: hidden !important;
+          }
+          
+          /* Show only the CV */
+          #cv-print-area,
+          #cv-print-area * {
+            visibility: visible !important;
+          }
+          
+          /* Scale the CV to fit A4 exactly while preserving screen proportions */
+          /* Screen CV: max-height 800px with aspect 210/297 = width ~566px */
+          /* A4 in pixels at 96dpi: 794px x 1123px */
+          /* Scale factor: 1123/800 = 1.40375 */
+          #cv-print-area {
+            position: fixed !important;
+            left: 0 !important;
+            top: 0 !important;
+            width: 566px !important;
+            height: 800px !important;
+            transform: scale(1.40375) !important;
+            transform-origin: top left !important;
+            display: flex !important;
+            flex-direction: row !important;
+            overflow: hidden !important;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            background: white !important;
+          }
+          
+          .resume-sidebar {
+            width: 32% !important;
+            background-color: #0f172a !important;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+            color-adjust: exact !important;
+            height: 100% !important;
+            overflow: hidden !important;
+            flex-shrink: 0 !important;
+          }
+          
+          .resume-main {
+            width: 68% !important;
+            height: 100% !important;
+            overflow: hidden !important;
+            background: white !important;
+            flex-shrink: 0 !important;
+          }
+          
+          /* Ensure colors print correctly */
+          * {
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+            color-adjust: exact !important;
+          }
+          
+          .bg-slate-900 { background-color: #0f172a !important; }
+          .bg-slate-800 { background-color: #1e293b !important; }
+          .bg-slate-800\/50 { background-color: rgba(30, 41, 59, 0.5) !important; }
+          .bg-slate-50 { background-color: #f8fafc !important; }
+          .bg-primary-500 { background-color: #6366f1 !important; }
+          .bg-primary-500\/10 { background-color: rgba(99, 102, 241, 0.1) !important; }
+          .bg-primary-50 { background-color: #eef2ff !important; }
+          
+          .text-primary-400 { color: #818cf8 !important; }
+          .text-primary-500 { color: #6366f1 !important; }
+          .text-primary-600 { color: #4f46e5 !important; }
+          .text-slate-300 { color: #cbd5e1 !important; }
+          .text-slate-400 { color: #94a3b8 !important; }
+          .text-slate-500 { color: #64748b !important; }
+          .text-slate-600 { color: #475569 !important; }
+          .text-slate-700 { color: #334155 !important; }
+          .text-slate-800 { color: #1e293b !important; }
+          .text-slate-900 { color: #0f172a !important; }
+          
+          .border-slate-700 { border-color: #334155 !important; }
+          .border-slate-800 { border-color: #1e293b !important; }
+          .border-slate-100 { border-color: #f1f5f9 !important; }
+          .border-primary-500 { border-color: #6366f1 !important; }
+          .border-primary-500\/20 { border-color: rgba(99, 102, 241, 0.2) !important; }
+        }
+      `}</style>
     </section>
   );
 };
