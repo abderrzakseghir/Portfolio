@@ -13,7 +13,7 @@ interface ResumeProps {
 export const Resume: React.FC<ResumeProps> = ({ data }) => {
   const handleDownload = () => {
     const link = document.createElement('a');
-    link.href = '/resume.pdf';
+    link.href = '/CV_SEGHIR_FullStack.pdf';
     link.download = 'CV_Abderrazak_Seghir_Developpeur_Full_Stack.pdf';
     document.body.appendChild(link);
     link.click();
@@ -51,11 +51,11 @@ export const Resume: React.FC<ResumeProps> = ({ data }) => {
         {/* NATIVE PDF VIEWER FOR DESKTOP */}
         <div className="hidden md:block max-w-[1000px] mx-auto print:hidden h-[850px] shadow-2xl rounded-2xl overflow-hidden border border-slate-200">
            <object 
-             data="/resume.pdf" 
+             data="/CV_SEGHIR_FullStack.pdf" 
              type="application/pdf" 
              className="w-full h-full"
            >
-             <p className="p-4 text-center">Votre navigateur ne supporte pas la lecture de PDF. <a href="/resume.pdf" className="text-primary-600 underline font-semibold">Télécharger le PDF</a></p>
+             <p className="p-4 text-center">Votre navigateur ne supporte pas la lecture de PDF. <a href="/CV_SEGHIR_FullStack.pdf" className="text-primary-600 underline font-semibold">Télécharger le PDF</a></p>
            </object>
         </div>
 
