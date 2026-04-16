@@ -34,12 +34,12 @@ import puppeteer from 'puppeteer';
 
   console.log('Generating PDF...');
   await page.pdf({
-    path: 'public/resume.pdf',
+    path: 'public/CV_SEGHIR_FullStack.pdf',
     format: 'A4',
     printBackground: true,
     margin: { top: 0, right: 0, bottom: 0, left: 0 }
   });
   
-  console.log('PDF generated at public/resume.pdf');
+  console.log('PDF generated at public/CV_SEGHIR_FullStack.pdf');
   await browser.close();
 })();
