@@ -96,11 +96,12 @@ export const portfolioData: PortfolioData = {
   "id": 4,
   "title": "Job Hunter AI : Générateur de Candidatures Intelligent",
   "images": [
-    "/assets/image/jobhunter/jobhunter1.png",
-    "/assets/image/jobhunter/jobhunter2.png",
-    "/assets/image/jobhunter/jobhunter3.png",
+     "/assets/image/jobhunter/jobhunterpr0.png",
+      "/assets/image/jobhunter/jobhunter3.png",
     "/assets/image/jobhunter/jobhunter4.png",
     "/assets/image/jobhunter/jobhunter5.png",
+    "/assets/image/jobhunter/jobhunter1.png",
+    "/assets/image/jobhunter/jobhunter2.png",
     "/assets/image/jobhunter/jobhunter6.png",
     "/assets/image/jobhunter/jobhunter7.png",
     "/assets/image/jobhunter/jobhunter8.png",
@@ -126,6 +127,7 @@ export const portfolioData: PortfolioData = {
   "id": 5,
   "title": "AWS Cloud Practitioner Prep (Mobile & Web App)",
   "images": [
+    "/assets/image/aws/awspr0.png",
     "/assets/image/aws/aws1.png",
     "/assets/image/aws/aws2.png",
     "/assets/image/aws/aws3.png",
