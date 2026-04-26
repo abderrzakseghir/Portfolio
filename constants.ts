@@ -92,9 +92,67 @@ export const portfolioData: PortfolioData = {
         "Interface utilisateur fluide et performante"
       ]
     },
+    {
+  "id": 4,
+  "title": "Job Hunter AI : Générateur de Candidatures Intelligent",
+  "images": [
+    "/assets/image/jobhunter/jobhunter1.png",
+    "/assets/image/jobhunter/jobhunter2.png",
+    "/assets/image/jobhunter/jobhunter3.png",
+    "/assets/image/jobhunter/jobhunter4.png",
+    "/assets/image/jobhunter/jobhunter5.png",
+    "/assets/image/jobhunter/jobhunter6.png",
+    "/assets/image/jobhunter/jobhunter7.png",
+    "/assets/image/jobhunter/jobhunter8.png",
+    "/assets/image/jobhunter/jobhunter9.png"
+  ],
+  "description": "Système avancé propulsé par l'Intelligence Artificielle conçu pour optimiser le processus de recherche d'emploi. L'application repose sur l'analyse sémantique des offres d'emploi et la génération hyper-personnalisée de CVs et de lettres de motivation sur-mesure, alignant parfaitement le profil du candidat avec les exigences du poste.",
+  "technologies": [
+    "Python", 
+    "IA / LLM (Large Language Models)", 
+    "Prompt Engineering", 
+    "LaTeX", 
+    "Traitement du langage naturel (NLP)"
+  ],
+  "achievements": [
+    "Conception d'un pipeline IA pour l'analyse sémantique des offres d'emploi et l'extraction automatique des compétences clés requises.",
+    "Implémentation d'un moteur de génération de texte basé sur des LLMs pour créer des lettres de motivation et structures de CVs uniques et adaptées à chaque offre.",
+    "Application de techniques avancées de 'Prompt Engineering' pour garantir la cohérence, la précision contextuelle et le ton professionnel des documents générés.",
+    "Automatisation du rendu de documents (via l'intégration LaTeX) pour une mise en page dynamique et instantanée des candidatures.",
+    "Création d'une architecture modulaire (bridge_generate) permettant de croiser efficacement les données du profil utilisateur avec le contexte de l'offre ciblée."
+  ]
+},
+{
+  "id": 5,
+  "title": "AWS Cloud Practitioner Prep (Mobile & Web App)",
+  "images": [
+    "/assets/image/aws/aws1.png",
+    "/assets/image/aws/aws2.png",
+    "/assets/image/aws/aws3.png",
+    "/assets/image/aws/aws4.png",
+    "/assets/image/aws/aws5.png"
+    
+  ],
+  "description": "Création d'une application cross-platform (Android, iOS et Web) interactive pour la préparation à l'examen AWS Cloud Practitioner. Interface utilisateur moderne et intégration d'une API serverless pour la gestion dynamique des questions.",
+  "technologies": [
+    "React 19",
+    "TypeScript",
+    "Vite",
+    "Capacitor",
+    "Vercel Serverless",
+    "Vercel Blob Storage",
+    "Lucide React"
+  ],
+  "achievements": [
+    "Développement d'une application hybride performante (iOS/Android/Web) à partir d'une seule base de code avec React et Capacitor",
+    "Conception d'APIs REST Serverless hébergées sur Vercel pour la synchronisation et la gestion des banques de questions en temps réel",
+    "Stockage et manipulation de données JSON à distance via Vercel Blob Storage",
+    "Mise en place d'une interface utilisateur fluide et responsive, optimisée pour l'expérience mobile (UX/UI)"
+  ]
+},
 
     {
-      "id": 4,
+      "id": 6,
       "title": "Prigra",
       "images": [   
         "/assets/image/prigra/prigra.png",
@@ -117,7 +175,7 @@ export const portfolioData: PortfolioData = {
  
 ,
 {
-      "id": 5,
+      "id": 7,
       "title": "JARVIS",
       "images": [
         "/assets/image/jarvis/jarvis_1.svg",
@@ -138,7 +196,7 @@ export const portfolioData: PortfolioData = {
      
     ,
         {
-      "id": 6,
+      "id": 8,
       "title": "Comiteplus",
       "images": [
           "/assets/image/comiteplus/comite1.png"
@@ -153,7 +211,7 @@ export const portfolioData: PortfolioData = {
       ]
     },
     {
-      "id": 7,
+      "id": 9,
       "title": "Festival Littéraire International",
       "images": [
         "/assets/image/festival/ff10.png",
