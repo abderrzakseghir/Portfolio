@@ -104,7 +104,6 @@ export const portfolioData: PortfolioData = {
     "/assets/image/jobhunter/jobhunter2.png",
     "/assets/image/jobhunter/jobhunter6.png",
     "/assets/image/jobhunter/jobhunter7.png",
-    "/assets/image/jobhunter/jobhunter8.png",
     "/assets/image/jobhunter/jobhunter9.png"
   ],
   "description": "Système avancé propulsé par l'Intelligence Artificielle conçu pour optimiser le processus de recherche d'emploi. L'application repose sur l'analyse sémantique des offres d'emploi et la génération hyper-personnalisée de CVs et de lettres de motivation sur-mesure, alignant parfaitement le profil du candidat avec les exigences du poste.",
