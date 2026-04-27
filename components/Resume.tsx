@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Download, Mail, Phone, MapPin, Linkedin, ExternalLink, Award, Sparkles, Briefcase, GraduationCap, Target, Car, Camera, Waves, Footprints, Clock, Eye, Globe } from 'lucide-react';
+import { Download, Mail, Phone, MapPin, Linkedin, ExternalLink, Award, Sparkles, Briefcase, GraduationCap, Target, Car, Camera, Waves, Footprints, Clock, Eye, Globe, Presentation } from 'lucide-react';
 import { PortfolioData } from '../types';
 
 const MotionDiv = motion.div as any;
@@ -18,6 +18,39 @@ export const Resume: React.FC<ResumeProps> = ({ data }) => {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+  };
+
+  const handlePresentation = () => {
+    const overlay = document.createElement('div');
+    overlay.style.cssText = 'position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:99999;background:#000;display:flex;align-items:center;justify-content:center;';
+    const iframe = document.createElement('iframe');
+    iframe.src = '/presentation_intoo.pdf#toolbar=0&navpanes=0&scrollbar=0&view=Fit';
+    iframe.style.cssText = 'width:100%;height:100%;border:none;background:#000;';
+    overlay.appendChild(iframe);
+    document.body.appendChild(overlay);
+
+    const close = () => {
+      document.body.removeChild(overlay);
+      document.removeEventListener('fullscreenchange', onFsChange);
+    };
+    const onFsChange = () => {
+      if (!document.fullscreenElement) close();
+    };
+    document.addEventListener('fullscreenchange', onFsChange);
+
+    overlay.requestFullscreen().catch(() => {
+      // Fallback: keep overlay visible even without fullscreen API
+      overlay.addEventListener('dblclick', close);
+    });
+
+    // Allow Escape to close when fullscreen is not supported
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && document.body.contains(overlay)) {
+        close();
+        document.removeEventListener('keydown', onKey);
+      }
+    };
+    document.addEventListener('keydown', onKey);
   };
 
   return (
@@ -37,15 +70,24 @@ export const Resume: React.FC<ResumeProps> = ({ data }) => {
           <p className="text-slate-600 max-w-2xl mx-auto mb-6 text-lg">
             Un aperçu de mon parcours.
           </p>
-          <button 
-            onClick={handleDownload}
-            className="inline-flex items-center px-8 py-4 bg-primary-600 text-white rounded-xl hover:bg-primary-700 transition-all shadow-xl shadow-primary-500/25 hover:shadow-primary-500/40 font-medium"
-          >
-            <Download size={20} className="mr-3 hidden md:block" />
-            <Eye size={20} className="mr-3 md:hidden" />
-            <span className="hidden md:inline">Télécharger mon CV (PDF)</span>
-            <span className="md:hidden">Voir mon CV</span>
-          </button>
+          <div className="flex flex-wrap justify-center gap-4">
+            <button 
+              onClick={handleDownload}
+              className="inline-flex items-center px-8 py-4 bg-primary-600 text-white rounded-xl hover:bg-primary-700 transition-all shadow-xl shadow-primary-500/25 hover:shadow-primary-500/40 font-medium"
+            >
+              <Download size={20} className="mr-3 hidden md:block" />
+              <Eye size={20} className="mr-3 md:hidden" />
+              <span className="hidden md:inline">Télécharger mon CV (PDF)</span>
+              <span className="md:hidden">Voir mon CV</span>
+            </button>
+            <button 
+              onClick={handlePresentation}
+              className="inline-flex items-center px-8 py-4 bg-primary-600 text-white rounded-xl hover:bg-primary-700 transition-all shadow-xl shadow-primary-500/25 hover:shadow-primary-500/40 font-medium"
+            >
+              <Presentation size={20} className="mr-3" />
+              Présenter Entretien
+            </button>
+          </div>
         </MotionDiv>
 
         {/* NATIVE PDF VIEWER FOR DESKTOP */}
