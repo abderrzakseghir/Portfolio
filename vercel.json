@@ -6,7 +6,7 @@
   "redirects": [
     {
       "source": "/resume.pdf",
-      "destination": "/CV_SEGHIR_FullStack.pdf",
+      "destination": "/CV_SEGHIR_IngénieurLogiciel.pdf",
       "permanent": true
     }
   ]

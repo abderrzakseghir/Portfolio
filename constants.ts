@@ -1,4 +1,4 @@
-import { PortfolioData } from './types';
+﻿import { PortfolioData } from './types';
 
 export const portfolioData: PortfolioData = {
   "personal": {
@@ -396,7 +396,18 @@ export const portfolioData: PortfolioData = {
     }
   ],
   "hobbies": [
-   { "id": 1,
+    {
+  "id": 1,
+  "name": "Tournoi 3x3 Interentreprises SLUC Nancy",
+  "type": "Basketball",
+  "date": "Mai 2026",
+  "location": "Gentilly, France",
+  "description": "Tournoi 3x3 interentreprises organisé par le SLUC Nancy Basket SASP",
+  "coverImage": "/assets/image/hobbies/basket_sluc.jpg",
+  "details": "🏀 Le parquet de Gentilly a vibré au rythme du tournoi 3x3 interentreprises organisé par le SLUC Nancy Basket SASP. 19 entreprises ont répondu présentes pour relever le défi, former leurs équipes et défendre fièrement leurs couleurs dans une ambiance à la fois compétitive et conviviale.\n\nAu programme de cette belle soirée :\n• Tournoi interentreprises\n• Concours de shoot\n• Buffet convivial\n\nEntre performances sportives, moments de partage et esprit collectif, cet événement a parfaitement illustré les valeurs du sport en entreprise : cohésion, dépassement de soi et convivialité.\n\nÉquipe Afludia : ABDERRAZAK SEGHIR, Dydha Mpandou, Kadda Attou, Matteo MAUCOTEL."
+},
+   {
+  "id": 2,
   "name": "Semi Marathon de Nancy",
   "type": "Course à pied",
   "date": "29 mars 2026",
@@ -433,8 +444,7 @@ export const portfolioData: PortfolioData = {
   "location": "ESI Sidi Bel Abbès, Algérie",
   "description": "Hackathon national de 24 heures organisé lors du GDG Devfest",
   "coverImage": "/assets/image/hobbies/devfest.png",
-  "details": "Participation au GDG Devfest Hackathon à l’ESI Sidi Bel Abbès. En équipe, nous avons conçu, designé et développé en 24 heures une application mobile nommée JARVIS, basée sur l’IA et le NLP, visant à améliorer la productivité et la gestion de projets. Le projet couvrait tout le cycle produit : idéation, prototypage et implémentation. Notre équipe a remporté la 2ᵉ place au niveau national. Cette expérience a renforcé mes compétences en travail d’équipe, innovation, développement sous pression et intégration de technologies d’IA."
-}
+  "details": "Participation au GDG Devfest Hackathon à l'ESI Sidi Bel Abbès. En équipe, nous avons conçu, designé et développé en 24 heures une application mobile nommée JARVIS, basée sur l'IA et le NLP, visant à améliorer la productivité et la gestion de projets. Le projet couvrait tout le cycle produit : idéation, prototypage et implémentation. Notre équipe a remporté la 2ᵉ place au niveau national. Cette expérience a renforcé mes compétences en travail d'équipe, innovation, développement sous pression et intégration de technologies d'IA."}
   ],
   "languages": [
     { "name": "Français, Arabe", "level": "Bilingue Courant" },
