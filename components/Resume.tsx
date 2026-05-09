@@ -80,13 +80,15 @@ export const Resume: React.FC<ResumeProps> = ({ data }) => {
               <span className="hidden md:inline">Télécharger mon CV (PDF)</span>
               <span className="md:hidden">Voir mon CV</span>
             </button>
-            <button 
-              onClick={handlePresentation}
-              className="inline-flex items-center px-8 py-4 bg-primary-600 text-white rounded-xl hover:bg-primary-700 transition-all shadow-xl shadow-primary-500/25 hover:shadow-primary-500/40 font-medium"
-            >
-              <Presentation size={20} className="mr-3" />
-              Présenter Entretien
-            </button>
+            {data.personal.showInterviewButton && (
+              <button 
+                onClick={handlePresentation}
+                className="inline-flex items-center px-8 py-4 bg-primary-600 text-white rounded-xl hover:bg-primary-700 transition-all shadow-xl shadow-primary-500/25 hover:shadow-primary-500/40 font-medium"
+              >
+                <Presentation size={20} className="mr-3" />
+                Présenter Entretien
+              </button>
+            )}
           </div>
         </MotionDiv>
 
