@@ -1,8 +1,8 @@
-# Abderrazak Seghir — Développeur Full Stack
+# Abderrazak Seghir — Ingénieur Logiciel
 
 <div align="center">
 
-**Développeur Full Stack | Master 2 MIAGE-SID | En recherche de CDI**
+**Ingénieur Logiciel | Master 2 MIAGE-SID | En recherche de CDI**
 
 [Portfolio](https://seghir-portfolio.vercel.app) · [LinkedIn](https://linkedin.com/in/abderrazak-seghir) · [GitHub](https://github.com/abderrazak-seghir) · [Email](mailto:abderrazakseghir1@gmail.com)
 
@@ -10,7 +10,7 @@
 
 ## À propos
 
-Je suis développeur Full Stack avec des compétences solides en **.NET**, **Blazor** et **SQL Server**. En dernière année de **Master 2 MIAGE (spécialité SID)**, je recherche un poste en **CDI**.
+Je suis ingénieur logiciel avec des compétences solides en **.NET**, **Blazor** et **SQL Server**. En dernière année de **Master 2 MIAGE (spécialité SID)**, je recherche un poste en **CDI**.
 
 ## Compétences
 
@@ -21,7 +21,7 @@ Je suis développeur Full Stack avec des compétences solides en **.NET**, **Bla
 
 ## Expérience
 
-### Développeur Full Stack — Alternance
+### Ingénieur Logiciel — Alternance
 
 **Afludia** · *2024 – Présent*
 
@@ -29,7 +29,7 @@ Je suis développeur Full Stack avec des compétences solides en **.NET**, **Bla
 - Gestion de bases de données (SQL Server)
 - Collaboration en équipe
 
-### Développeur Full Stack — Stage
+### Ingénieur Logiciel — Stage
 
 **Solutions Développement Informatique** · *Avril 2024 – Juin 2024*
 

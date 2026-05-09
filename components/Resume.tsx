@@ -140,7 +140,7 @@ export const Resume: React.FC<ResumeProps> = ({ data }) => {
                   />
                 </div>
                 <h1 className="text-[22px] font-extrabold tracking-tight leading-tight text-slate-900 mb-1">Abderrazak Seghir</h1>
-                <p className="text-primary-600 font-semibold text-[13px] uppercase tracking-widest mt-1">Développeur Full Stack</p>
+                <p className="text-primary-600 font-semibold text-[13px] uppercase tracking-widest mt-1">Ingénieur Logiciel</p>
               </div>
 
               <div className="space-y-6">
