@@ -22,28 +22,28 @@ export const HobbyModal: React.FC<HobbyModalProps> = ({ hobby, onClose }) => {
         className="bg-slate-800 rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-slate-700 animate-fadeIn"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close Button */}
-        <button
-          onClick={onClose}
-          className="sticky top-0 right-0 float-right m-4 text-gray-400 hover:text-white text-2xl transition-colors z-10"
-          aria-label="Fermer"
-        >
-          ✕
-        </button>
-
-        {/* Image */}
-        <div className="relative h-80 overflow-hidden bg-gradient-to-br from-slate-700 to-slate-800">
+        {/* Image + Close Button overlay */}
+        <div className="relative overflow-hidden bg-black rounded-t-xl flex items-center justify-center" style={{maxHeight: '70vh'}}>
           {hobby.coverImage && hobby.coverImage !== '' ? (
             <img
               src={hobby.coverImage}
               alt={hobby.name}
-              className="w-full h-full object-cover"
+              className="w-full h-auto object-contain"
+              style={{maxHeight: '70vh'}}
             />
           ) : (
             <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-purple-500 to-pink-600">
               <span className="text-white text-8xl">🎯</span>
             </div>
           )}
+          {/* Close Button positionné en absolu sur l'image */}
+          <button
+            onClick={onClose}
+            className="absolute top-3 right-3 bg-black/50 hover:bg-black/80 text-white text-xl w-9 h-9 rounded-full flex items-center justify-center transition-colors z-10"
+            aria-label="Fermer"
+          >
+            ✕
+          </button>
         </div>
 
         {/* Content */}

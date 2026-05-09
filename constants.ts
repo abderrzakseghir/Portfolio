@@ -404,7 +404,7 @@ export const portfolioData: PortfolioData = {
   "location": "Nancy, France",
   "description": "Tournoi 3x3 interentreprises organisé par le SLUC Nancy Basket SASP",
   "coverImage": "/assets/image/hobbies/basket_sluc.jpeg",
-  "details": "🏀 Le parquet de Gentilly a vibré au rythme du tournoi 3x3 interentreprises organisé par le SLUC Nancy Basket SASP. 19 entreprises ont répondu présentes pour relever le défi, former leurs équipes et défendre fièrement leurs couleurs dans une ambiance à la fois compétitive et conviviale.\n\nAu programme de cette belle soirée :\n• Tournoi interentreprises\n• Concours de shoot\n• Buffet convivial\n\nEntre performances sportives, moments de partage et esprit collectif, cet événement a parfaitement illustré les valeurs du sport en entreprise : cohésion, dépassement de soi et convivialité.\n\nÉquipe Afludia : ABDERRAZAK SEGHIR, Dydha Mpandou, Kadda Attou, Matteo MAUCOTEL."
+  "details": "🏀 Le parquet de Nancy a vibré au rythme du tournoi 3x3 interentreprises organisé par le SLUC Nancy Basket SASP. 19 entreprises ont répondu présentes pour relever le défi, former leurs équipes et défendre fièrement leurs couleurs dans une ambiance à la fois compétitive et conviviale.\n\nAu programme de cette belle soirée :\n• Tournoi interentreprises\n• Concours de shoot\n• Buffet convivial\n\nEntre performances sportives, moments de partage et esprit collectif, cet événement a parfaitement illustré les valeurs du sport en entreprise : cohésion, dépassement de soi et convivialité.\n\nÉquipe Afludia : ABDERRAZAK SEGHIR, Dydha Mpandou, Kadda Attou, Matteo MAUCOTEL."
 },
    {
   "id": 2,
