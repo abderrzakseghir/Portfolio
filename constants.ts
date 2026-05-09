@@ -7,7 +7,8 @@ export const portfolioData: PortfolioData = {
     "status": "Étudiant en Master 2 MIAGE-SID",
     "objective": "Recherche un poste en CDI pour mettre en valeur mes compétences et apprendre de nouvelles technologies",
     "description": "Actuellement en dernière année de Master 2 MIAGE spécialité SID, je recherche un poste en CDI pour appliquer mes compétences et continuer à apprendre. J'ai une expérience en gestion de projets, et je prépare le certificat AWS Certified Cloud Practitioner (CLF-C02)",
-    "avatar": "/assets/image/avatar.png"
+    "avatar": "/assets/image/avatar.png",
+    "showInterviewButton": false
   },
   "projects": [
 {

@@ -5,6 +5,7 @@ export interface PersonalInfo {
   objective: string;
   description: string;
   avatar: string;
+  showInterviewButton?: boolean;
 }
 
 export interface Project {
